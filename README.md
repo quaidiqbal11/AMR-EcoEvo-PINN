@@ -1,5 +1,4 @@
-# Simplex- and Capacity-Preserving Eco-Evolutionary PINNs for Antimicrobial Resistance
-
+# Simplex- and Capacity-Preserving Eco-Evolutionary PINNs for Sparse-Data Inference of Antimicrobial Resistance Dynamics
 Code and executed notebook for **"Simplex- and Capacity-Preserving
 Eco-Evolutionary PINNs for Sparse-Data Inference of Antimicrobial Resistance
 Dynamics"** (Quaid Iqbal, 2026).
