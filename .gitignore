@@ -1,0 +1,38 @@
+# -------------------- Python --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# -------------------- Jupyter --------------------
+.ipynb_checkpoints/
+
+# -------------------- OS / editor --------------------
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# -------------------- Generated experiment outputs --------------------
+# Running round1_deterministic_model.py / round2_stochastic_gillespie.py /
+# round3_architecture_ablation_observation_regimes.py /
+# round4_multischedule_identifiability.py (re)populates data/, outputs/,
+# round3/, and round4/ with models, predictions, histories, figures, and
+# tables. These are large and machine-specific, so their contents are not
+# tracked -- only the folder structure (via .gitkeep) and the small
+# pre-generated figure previews under figures/ are kept in version control.
+data/**/*.csv
+data/**/*.npz
+outputs/**/*
+round3/**/*
+round4/**/*
+!**/.gitkeep
+!**/*.gitkeep
+
+# -------------------- Environment --------------------
+.venv/
+venv/
+env/
