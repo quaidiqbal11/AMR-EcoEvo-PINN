@@ -137,7 +137,7 @@ If you use this code, please cite the paper:
 @article{iqbal2026simplex,
   title   = {Simplex- and Capacity-Preserving Eco-Evolutionary {PINN}s for
              Sparse-Data Inference of Antimicrobial Resistance Dynamics},
-  author  = {Iqbal, Quaid},
+  author  = {Iqbal, Quaid and Shah, Zubair},
   year    = {2026},
   note    = {Preprint / repository: see LICENSE for usage terms}
 }
