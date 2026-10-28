@@ -1,4 +1,4 @@
-# Simplex- and capacity-preserving eco-evolutionary PINNs for antimicrobial resistance
+# Simplex- and capacity-preserving eco-evolutionary PINNs for antimicrobial resistance dynamics
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23727998.svg)](https://doi.org/10.5281/zenodo.23727998)
 
