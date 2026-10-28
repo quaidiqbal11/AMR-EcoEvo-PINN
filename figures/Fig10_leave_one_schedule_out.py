@@ -14,6 +14,10 @@ import matplotlib.pyplot as plt
 
 import plos_style as ps
 
+# Re-apply the PLOS style (Arial, 8-11 pt). Needed when this runs in a notebook
+# after another figure (e.g. Fig 1) has changed matplotlib's fonts.
+plt.rcParams.update(ps.RC)
+
 CSV = ps.ROUND4_TABLES / "round4_leave_one_schedule_out_metrics.csv"
 
 METRICS = ["rmse_resistant", "rmse_fraction", "mu_error_percent", "cost_error_percent"]

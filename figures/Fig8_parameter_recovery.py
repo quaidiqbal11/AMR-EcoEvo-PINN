@@ -13,6 +13,10 @@ from matplotlib.ticker import LogLocator, NullFormatter
 
 import plos_style as ps
 
+# Re-apply the PLOS style (Arial, 8-11 pt). Needed when this runs in a notebook
+# after another figure (e.g. Fig 1) has changed matplotlib's fonts.
+plt.rcParams.update(ps.RC)
+
 CSV = ps.ROUND4_TABLES / "round4_primary_multischedule_all_seeds_metrics.csv"
 ps.require(CSV)
 

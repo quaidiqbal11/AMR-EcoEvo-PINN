@@ -13,6 +13,10 @@ from matplotlib.lines import Line2D
 
 import plos_style as ps
 
+# Re-apply the PLOS style (Arial, 8-11 pt). Needed when this runs in a notebook
+# after another figure (e.g. Fig 1) has changed matplotlib's fonts.
+plt.rcParams.update(ps.RC)
+
 Q86_CSV = ps.REAL_DATA_DIR / "Ramsayer_qR_86h_ENDPOINT_unpaired.csv"
 FORECAST_CSV = (ps.REAL_TABLES /
                 "final_R310_11FR_86h_unpaired_distribution_forecast_population_forecasts_from_48h.csv")

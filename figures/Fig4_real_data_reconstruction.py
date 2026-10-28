@@ -15,6 +15,10 @@ from matplotlib.ticker import MaxNLocator
 
 import plos_style as ps
 
+# Re-apply the PLOS style (Arial, 8-11 pt). Needed when this runs in a notebook
+# after another figure (e.g. Fig 1) has changed matplotlib's fonts.
+plt.rcParams.update(ps.RC)
+
 TOTAL_CSV = ps.REAL_SOURCE_DATA / "final_MAIN_total_load_source_data.csv"
 Q48_CSV = ps.REAL_SOURCE_DATA / "final_MAIN_qR48_source_data.csv"
 ps.require(TOTAL_CSV, Q48_CSV)
