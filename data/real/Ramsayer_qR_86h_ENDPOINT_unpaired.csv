@@ -1,0 +1,27 @@
+endpoint_row,dose_ug_ml,resistant_fraction_qR,log10_population_plus1,population_size_est,sensitive_fraction_qS,resistant_population_est_R,sensitive_population_est_S,linkage_note
+13,30.0,1.0,3.9542908,9000.000793765945,0.0,9000.000793765945,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+14,30.0,0.884057971,9.5378191,3450000038.1375103,0.11594202899999995,3050000033.66577,400000004.4717401,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+15,30.0,0.9019607843,9.4065402,2550000113.8838363,0.09803921569999996,2300000102.6837544,250000011.20008188,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+16,30.0,1.0,9.7403627,5500000132.047193,0.0,5500000132.047193,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+17,30.0,0.8510638298,9.3710679,2350000203.1504717,0.14893617020000005,2000000172.9240184,350000030.22645336,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+18,30.0,0.8548387097,9.4913617,3100000043.011051,0.14516129030000002,2650000036.8375115,450000006.17353976,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+19,40.0,0.8101265823,9.5965971,3950000038.7782707,0.1898734177,3200000031.500308,750000007.2779628,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+20,40.0,0.8928571429,9.6232493,4200000091.860531,0.10714285710000004,3750000082.198331,450000009.6621999,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+21,40.0,0.8,9.4771213,3000000311.785509,0.19999999999999996,2400000249.428407,600000062.3571017,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+22,40.0,0.8545454545,9.4393327,2750000038.067447,0.14545454550000003,2350000032.405364,400000005.6620833,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+23,40.0,0.8448275862,9.462398,2900000013.029716,0.15517241380000002,2450000010.9878635,450000002.04185253,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+24,40.0,0.6923076923,9.5910646,3899999935.901456,0.3076923077,2699999955.5940847,1199999980.3073711,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+25,40.0,1.0,9.5965971,3950000038.7782707,0.0,3950000038.7782707,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+26,50.0,1.0,9.5118834,3250000291.0107675,0.0,3250000291.0107675,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+27,50.0,1.0,9.3222193,2100000024.4637601,0.0,2100000024.4637601,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+28,50.0,1.0,9.3222193,2100000024.4637601,0.0,2100000024.4637601,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+29,50.0,0.9272727273,9.4393327,2750000038.067447,0.07272727270000001,2550000035.3739057,200000002.69354165,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+30,50.0,0.8,9.4771213,3000000311.785509,0.19999999999999996,2400000249.428407,600000062.3571017,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+31,50.0,0.7936507937,9.4983106,3150000334.170655,0.20634920629999998,2500000265.3698053,650000068.8008493,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+32,50.0,0.8225806452,9.4913617,3100000043.011051,0.17741935480000004,2550000035.500058,550000007.5109931,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+33,100.0,0.9882352941,9.6283889,4249999704.9280543,0.011764705900000005,4199999708.324489,49999996.603565365,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+34,100.0,1.0,9.469822,2949999890.4663205,0.0,2949999890.4663205,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+35,100.0,1.0,9.6580114,4550000034.022633,0.0,4550000034.022633,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+36,100.0,0.6511627907,9.3324385,2150000197.4401293,0.34883720929999995,1400000128.5706656,750000068.8694636,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+37,100.0,0.8552036199,10.043362,11049992925.153511,0.14479638009999996,9449993949.460672,1599998975.6928382,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv
+38,100.0,1.0,9.3293979,2135000100.4615126,0.0,2135000100.4615126,0.0,treated: unpaired endpoint; verified embedded fallback from Ramsayer_qR_86h_ENDPOINT_unpaired.csv

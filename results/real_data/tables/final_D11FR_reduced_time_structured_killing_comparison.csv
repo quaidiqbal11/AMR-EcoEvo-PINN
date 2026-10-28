@@ -1,0 +1,6 @@
+model,n_exact_ODE_parameters,weighted_data_objective,relative_to_PINN
+Current trained PINN,,1.3703036964339934,1.0
+Flexible Hill-kill exact ODE,9.0,2.574002697955372,1.8784176855494308
+Free dose-specific-kill + rhoR exact ODE,10.0,2.2663320733396235,1.6538903596607142
+Full 11F+ joint time-structured exact ODE,14.0,1.331552685081236,0.9717208590667886
+Reduced 11F-R time-structured-kill exact ODE,12.0,1.3315563188226864,0.9717235108449747

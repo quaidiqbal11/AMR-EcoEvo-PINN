@@ -1,0 +1,3 @@
+model,rmse_logB_val,rmse_qR_val,r2_logB_val,max_negative_violation,max_capacity_violation
+baseline_11FR,0.2644560402467826,0.19022247557042965,0.9764106995739702,0.0,0.0
+state_only_physics_refined,0.26365695978510656,0.17814370966755122,0.9765530390785121,0.0,0.0

@@ -1,0 +1,2 @@
+mutation_probability,resistance_fitness_cost,sensitive_birth_rate_per_h,baseline_death_rate_per_h,initial_resistant_fraction_shared,kill_30_per_h,kill_40_per_h,kill_50_per_h,kill_100_per_h,resistant_relative_drug_sensitivity,kill_activation_onset_h,kill_activation_per_h
+1.001139792228269e-12,2.3177814847376895e-14,0.9767310734811431,0.46647778538368395,2.069356475272017e-06,0.5915693198729558,0.5174129752887784,0.5090906860207806,0.5150261348308373,0.9133867266097822,13.95241107126814,0.2334058418807064

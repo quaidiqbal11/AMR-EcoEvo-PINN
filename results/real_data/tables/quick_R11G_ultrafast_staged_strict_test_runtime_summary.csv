@@ -1,0 +1,2 @@
+mode,stageA_elapsed_min,stageB_elapsed_min,n_train_populations,n_validation_populations,n_test_populations,n_train_random_effects,GH_nodes
+QUICK,0.07125180000051236,0.06578296500180537,26,6,6,18,5

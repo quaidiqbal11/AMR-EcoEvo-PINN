@@ -1,0 +1,5 @@
+Regime,Phenotype information,Phenotype points,Seeds,RMSE S,RMSE R,RMSE total,RMSE fraction,Estimated mu,Mu error (%),Estimated c_R,c_R error (%),Physics RMSE,Training time (min)
+O1,Total load only,0,5,0.8976 ± 0.6011,0.9087 ± 0.5484,0.2368 ± 0.0275,2.454e-03 ± 2.28e-03,7.391e-04 ± 1.17e-04,639.1 ± 117.4,0.1561 ± 0.0008,56.1 ± 0.8,8.325e-04 ± 2.58e-04,16.60 ± 4.24
+O2,Total + 1 phenotype point,1,5,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+O3,Total + 3 phenotype points,3,5,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+O4,Fully phenotype-resolved,21,5,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A

@@ -1,0 +1,5 @@
+schedule,replicates,minimum_sensitive,minimum_resistant,maximum_total,nonnegative,capacity_respected,complete_accounting,complete_rows,all_checks_passed
+untreated,500,98,0,936,True,True,True,True,True
+early_continuous,500,97,0,874,True,True,True,True,True
+late_continuous,500,98,0,932,True,True,True,True,True
+pulsed,500,98,0,929,True,True,True,True,True

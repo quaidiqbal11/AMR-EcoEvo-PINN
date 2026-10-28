@@ -1,0 +1,3 @@
+model,mean_load_MSE,mean_fraction_MSE,weighted_data_objective
+Trained PINN trajectory,0.12091330205836899,0.04829674835991691,1.4506167623832744
+Exact ODE at same parameters,1.3134673510607118,0.43627780808593764,15.316062551036808

@@ -1,0 +1,4 @@
+model,weighted_data_objective,relative_to_PINN
+Trained PINN trajectory,1.4506167623832744,1.0
+Best original exact ODE,4.337720120630017,2.9902592008542688
+Best extended Hill-kill exact ODE,2.6246672471837194,1.809345731584924

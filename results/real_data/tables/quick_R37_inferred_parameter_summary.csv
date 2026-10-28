@@ -1,0 +1,7 @@
+parameter,symbol,value,unit
+Shared initial resistant fraction,q0,5.0519080984788356e-06,dimensionless
+Mutation probability,mu,8.974979060002035e-07,per division
+Resistance fitness cost,cR,0.09803085034842417,dimensionless
+Sensitive birth rate,rS,0.4807652660788334,h^-1
+Death rate,d,0.35997290031135354,h^-1
+Derived resistant baseline birth rate,rR,0.43363543822713896,h^-1

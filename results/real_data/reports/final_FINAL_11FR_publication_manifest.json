@@ -1,0 +1,1299 @@
+{
+  "run_label": "final",
+  "execution_mode": "FINAL",
+  "cell13_training_or_optimization_performed": false,
+  "model_identity": {
+    "architecture": "shared_dose_conditioned_hard_PINN_11FR",
+    "physics_variant": "11F-R_reduced_time_structured_killing",
+    "state_model_used_for_final_audits": "INTEGRAL_REFINED_RESULT (P2)",
+    "inverse_parameter_source": "FULL_RESULT; frozen unchanged through P1/P2"
+  },
+  "mechanism": {
+    "H_K": "sigmoid(gamma_K * (t - tau_K))",
+    "G_R": 1.0,
+    "shared_parameters": [
+      "mu",
+      "c_R",
+      "r_S",
+      "d_0",
+      "q_0",
+      "rho_R",
+      "tau_K",
+      "gamma_K"
+    ],
+    "dose_specific_parameters": [
+      "k30",
+      "k40",
+      "k50",
+      "k100"
+    ]
+  },
+  "normalization": {
+    "K_REAL": 11180001253.8321,
+    "capacity_margin": 1.3,
+    "note": "K_REAL is the empirical normalization/capacity scale used by the hard architecture; internal grouped validation is not an external test."
+  },
+  "training_configuration": {
+    "architecture": "shared_dose_conditioned_hard_PINN_11FR",
+    "physics_variant": "11F-R_reduced_time_structured_killing",
+    "network_width": 64,
+    "network_depth": 4,
+    "pretrain_epochs": 1500,
+    "physics_warmup_epochs": 1200,
+    "adam_epochs": 8000,
+    "lbfgs_max_iter": 300,
+    "collocation_points_per_dose": 768,
+    "total_data_weight": 10.0,
+    "fraction_data_weight": 5.0,
+    "physics_weight": 25.0,
+    "log_physics_weight": 2.5,
+    "physics_time_scale_h": 24.0,
+    "physics_horizon_h": 86.0,
+    "P1_pointwise_physics_factor": 5.0,
+    "P1_adam_epochs": 1800,
+    "P1_adam_lr": 0.0002,
+    "P1_lbfgs_max_iter": 200,
+    "P2_pointwise_physics_factor": 5.0,
+    "P2_integral_defect_weight": 10.0,
+    "P2_adam_epochs": 1200,
+    "P2_adam_lr": 0.0001,
+    "P2_lbfgs_max_iter": 150
+  },
+  "seeds": {
+    "R37_seed": 20260815,
+    "R38_CV_seeds": [
+      11,
+      22,
+      33
+    ],
+    "R39_design_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "software_hardware": {
+    "python": "3.13.11",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.0",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "device": "cuda",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 3070"
+  },
+  "final_inverse_parameters": [
+    {
+      "mutation_probability": 3.1176978927195864e-05,
+      "resistance_fitness_cost": 0.10599833291542468,
+      "sensitive_birth_rate_per_h": 0.6461183520871371,
+      "baseline_death_rate_per_h": 0.350001527318316,
+      "initial_resistant_fraction_shared": 5.970685702054704e-05,
+      "kill_30_per_h": 0.4558613640374452,
+      "kill_40_per_h": 0.3937060491650161,
+      "kill_50_per_h": 0.3632759724646119,
+      "kill_100_per_h": 0.3398573960260233,
+      "resistant_relative_drug_sensitivity": 0.667813687461868,
+      "kill_activation_onset_h": 13.665091634516322,
+      "kill_activation_per_h": 0.22448300558262374,
+      "K_REAL_cells": 11180001253.8321,
+      "parameter_source": "FULL_RESULT; unchanged by P1/P2",
+      "max_P2_vs_base_parameter_difference": 0.0
+    }
+  ],
+  "P2_parameter_freeze": {
+    "max_absolute_change": 0.0,
+    "per_parameter_absolute_change": {
+      "mutation_probability": 0.0,
+      "resistance_fitness_cost": 0.0,
+      "sensitive_birth_rate_per_h": 0.0,
+      "baseline_death_rate_per_h": 0.0,
+      "initial_resistant_fraction_shared": 0.0,
+      "kill_30_per_h": 0.0,
+      "kill_40_per_h": 0.0,
+      "kill_50_per_h": 0.0,
+      "kill_100_per_h": 0.0,
+      "resistant_relative_drug_sensitivity": 0.0,
+      "kill_activation_onset_h": 0.0,
+      "kill_activation_per_h": 0.0
+    },
+    "passed_at_1e-14": true
+  },
+  "observation_metrics_base_vs_P2": [
+    {
+      "model_stage": "R3.7_base_11FR",
+      "split": "train",
+      "rmse_logB": 0.2998671717374419,
+      "mae_logB": 0.17192708978189747,
+      "r2_logB": 0.9692069892320566,
+      "rmse_qR": 0.20252967429032298,
+      "mae_qR": 0.10767860016548426
+    },
+    {
+      "model_stage": "R3.7_base_11FR",
+      "split": "validation",
+      "rmse_logB": 0.2644560402467826,
+      "mae_logB": 0.14941984470183842,
+      "r2_logB": 0.9764106995739702,
+      "rmse_qR": 0.19022247557042965,
+      "mae_qR": 0.10932738413051617
+    },
+    {
+      "model_stage": "P2_final_state_11FR",
+      "split": "train",
+      "rmse_logB": 0.3066121364834851,
+      "mae_logB": 0.17072944238711957,
+      "r2_logB": 0.9678061445714303,
+      "rmse_qR": 0.20492115309185155,
+      "mae_qR": 0.11001875437931088
+    },
+    {
+      "model_stage": "P2_final_state_11FR",
+      "split": "validation",
+      "rmse_logB": 0.25951311466694804,
+      "mae_logB": 0.1485090213839751,
+      "r2_logB": 0.9772842698998748,
+      "rmse_qR": 0.16338967336805288,
+      "mae_qR": 0.09886055214000955
+    }
+  ],
+  "final_P2_feasibility": {
+    "max_negative_violation": 0.0,
+    "max_capacity_violation": 0.0,
+    "dosewise": [
+      {
+        "dose_ug_ml": 0.0,
+        "min_s_over_K": 0.36894040188692784,
+        "min_r_over_K": 2.2029587141975672e-05,
+        "max_total_over_K": 0.4598143367684563,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "min_s_over_K": 2.697051401852355e-12,
+        "min_r_over_K": 8.86113041025793e-08,
+        "max_total_over_K": 0.3689624314740698,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "min_s_over_K": 1.7802686243547e-12,
+        "min_r_over_K": 2.9942010523223342e-06,
+        "max_total_over_K": 0.36896243147406976,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "min_s_over_K": 2.385617155257187e-13,
+        "min_r_over_K": 8.19503813537418e-06,
+        "max_total_over_K": 0.36896243147406976,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "min_s_over_K": 7.24268552000147e-15,
+        "min_r_over_K": 1.817970230468535e-06,
+        "max_total_over_K": 0.3689624314740698,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      }
+    ]
+  },
+  "final_P2_physics_fidelity": [
+    {
+      "dose_ug_ml": 0.0,
+      "rmse_Rs_raw_per_h": 0.0002617253000454756,
+      "rmse_Rr_raw_per_h": 1.3846166275959506e-07,
+      "combined_raw_rmse_per_h": 0.00018506776036836655,
+      "combined_scaled_rmse": 0.004441626248840797,
+      "max_abs_Rs_raw_per_h": 0.0005641568170646205,
+      "max_abs_Rr_raw_per_h": 4.405664355025625e-07
+    },
+    {
+      "dose_ug_ml": 30.0,
+      "rmse_Rs_raw_per_h": 0.0005949373755886737,
+      "rmse_Rr_raw_per_h": 4.3429481128082513e-07,
+      "combined_raw_rmse_per_h": 0.00042068436474649353,
+      "combined_scaled_rmse": 0.010096424753915844,
+      "max_abs_Rs_raw_per_h": 0.0019523166407543063,
+      "max_abs_Rr_raw_per_h": 1.224195386549323e-06
+    },
+    {
+      "dose_ug_ml": 40.0,
+      "rmse_Rs_raw_per_h": 0.00015090964515446765,
+      "rmse_Rr_raw_per_h": 3.1786902202602056e-07,
+      "combined_raw_rmse_per_h": 0.0001067094701546271,
+      "combined_scaled_rmse": 0.0025610272837110508,
+      "max_abs_Rs_raw_per_h": 0.0009186408478167457,
+      "max_abs_Rr_raw_per_h": 7.61640915137841e-07
+    },
+    {
+      "dose_ug_ml": 50.0,
+      "rmse_Rs_raw_per_h": 0.00035101940020560997,
+      "rmse_Rr_raw_per_h": 4.024890332461801e-07,
+      "combined_raw_rmse_per_h": 0.00024820836138024044,
+      "combined_scaled_rmse": 0.005957000673125771,
+      "max_abs_Rs_raw_per_h": 0.0012388299070510353,
+      "max_abs_Rr_raw_per_h": 1.038043010819429e-06
+    },
+    {
+      "dose_ug_ml": 100.0,
+      "rmse_Rs_raw_per_h": 6.043905070570149e-05,
+      "rmse_Rr_raw_per_h": 2.390130727454076e-07,
+      "combined_raw_rmse_per_h": 4.273719678134785e-05,
+      "combined_scaled_rmse": 0.0010256927227523483,
+      "max_abs_Rs_raw_per_h": 0.001112419066257836,
+      "max_abs_Rr_raw_per_h": 9.470499483389393e-07
+    }
+  ],
+  "final_P2_early_log_physics_0_4h": [
+    {
+      "dose_ug_ml": 0.0,
+      "rmse_logRs": 0.004081561490033559,
+      "rmse_logRr": 0.022770938246656623,
+      "max_abs_logRs": 0.015938196495701152,
+      "max_abs_logRr": 0.08388806957228931
+    },
+    {
+      "dose_ug_ml": 30.0,
+      "rmse_logRs": 0.004215553200914734,
+      "rmse_logRr": 0.028794602117997163,
+      "max_abs_logRs": 0.016927886225731895,
+      "max_abs_logRr": 0.07705271821766503
+    },
+    {
+      "dose_ug_ml": 40.0,
+      "rmse_logRs": 0.006122192909570353,
+      "rmse_logRr": 0.017882535968565854,
+      "max_abs_logRs": 0.025952851935145023,
+      "max_abs_logRr": 0.0411774935280708
+    },
+    {
+      "dose_ug_ml": 50.0,
+      "rmse_logRs": 0.007246843956575871,
+      "rmse_logRr": 0.023586462158539715,
+      "max_abs_logRs": 0.015923798028868917,
+      "max_abs_logRr": 0.04793850789348521
+    },
+    {
+      "dose_ug_ml": 100.0,
+      "rmse_logRs": 0.010701678944163316,
+      "rmse_logRr": 0.02082160638840419,
+      "max_abs_logRs": 0.031427349856079,
+      "max_abs_logRr": 0.07284231122307624
+    }
+  ],
+  "final_P2_base_objective_loss_balance": [
+    {
+      "total": 1.4337145912532887,
+      "load": 0.11649816722585293,
+      "fraction": 0.05170239940411056,
+      "physics": 3.466217953350692e-05,
+      "physics_raw_rmse_per_h": 0.00024531081309931996,
+      "physics_scaled_rmse": 0.00588745951438368,
+      "physics_log": 0.003741746057233604,
+      "regularization": 0.2342784872635044,
+      "weighted_load": 1.1649816722585293,
+      "weighted_fraction": 0.25851199702055283,
+      "weighted_physics": 0.000866554488337673,
+      "weighted_log_physics": 0.00935436514308401
+    }
+  ],
+  "P2_integral_defect_reference_if_available": [
+    {
+      "model": "P1_pointwise_refined",
+      "mean_integral_defect_loss": 0.0038345463410982164,
+      "max_abs_defect_logS": 0.15549198228623265,
+      "max_abs_defect_logR": 0.37179253838443727
+    },
+    {
+      "model": "P2_integral_refined",
+      "mean_integral_defect_loss": 0.0024243846955961275,
+      "max_abs_defect_logS": 0.12161798501574836,
+      "max_abs_defect_logR": 0.30252626285653117
+    }
+  ],
+  "full_observed_horizon_PINN_vs_exact_11FR_ODE": {
+    "scope": "control through its observed horizon; treated doses through 48 h; no treated 86-h endpoint",
+    "dosewise_consistency": [
+      {
+        "dose_ug_ml": 0.0,
+        "mean_abs_logS_difference": 0.0004111817739463623,
+        "max_abs_logS_difference": 0.001448699905688855,
+        "mean_abs_logR_difference": 0.0017622053977902833,
+        "max_abs_logR_difference": 0.005956477991595932,
+        "observed_horizon_h": 86.0
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "mean_abs_logS_difference": 0.06818239489291654,
+        "max_abs_logS_difference": 0.1069133540695022,
+        "mean_abs_logR_difference": 0.12885621111591591,
+        "max_abs_logR_difference": 0.29855651581788667,
+        "observed_horizon_h": 48.0
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "mean_abs_logS_difference": 0.0057636147284820865,
+        "max_abs_logS_difference": 0.015684725535198396,
+        "mean_abs_logR_difference": 0.05600412963472881,
+        "max_abs_logR_difference": 0.11670982642709316,
+        "observed_horizon_h": 48.0
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "mean_abs_logS_difference": 0.07210660359991013,
+        "max_abs_logS_difference": 0.11309134729184223,
+        "mean_abs_logR_difference": 0.053540328440512465,
+        "max_abs_logR_difference": 0.1303583699926616,
+        "observed_horizon_h": 48.0
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "mean_abs_logS_difference": 0.0027258793315311156,
+        "max_abs_logS_difference": 0.00721199807188011,
+        "mean_abs_logR_difference": 0.04546864759110129,
+        "max_abs_logR_difference": 0.10635573481039184,
+        "observed_horizon_h": 48.0
+      }
+    ],
+    "late_23_48h_consistency": [
+      {
+        "dose_ug_ml": 30.0,
+        "mean_abs_logS_difference_23_48h": 0.10312264404796845,
+        "max_abs_logS_difference_23_48h": 0.1069133540695022,
+        "mean_abs_logR_difference_23_48h": 0.20581515828951621,
+        "max_abs_logR_difference_23_48h": 0.29855651581788667
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "mean_abs_logS_difference_23_48h": 0.007467663599259492,
+        "max_abs_logS_difference_23_48h": 0.015684725535198396,
+        "mean_abs_logR_difference_23_48h": 0.08807401667324331,
+        "max_abs_logR_difference_23_48h": 0.11670982642709316
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "mean_abs_logS_difference_23_48h": 0.10262399364697296,
+        "max_abs_logS_difference_23_48h": 0.11309134729184223,
+        "mean_abs_logR_difference_23_48h": 0.08427844664041809,
+        "max_abs_logR_difference_23_48h": 0.1303583699926616
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "mean_abs_logS_difference_23_48h": 0.002828868547935827,
+        "max_abs_logS_difference_23_48h": 0.005730355852016977,
+        "mean_abs_logR_difference_23_48h": 0.0720457942263411,
+        "max_abs_logR_difference_23_48h": 0.10635573481039184
+      }
+    ],
+    "data_fit_comparison": [
+      {
+        "model": "Final P2 PINN trajectory",
+        "n_total_observations": 164,
+        "rmse_logB": 0.2996394355860457,
+        "mae_logB": 0.16720669271588934,
+        "n_qR_observations": 38,
+        "rmse_qR": 0.19894080312889986,
+        "mae_qR": 0.10825693297310542,
+        "observed_window_weighted_data_objective": 1.3659911606585047
+      },
+      {
+        "model": "Exact 11F-R ODE at same frozen parameters",
+        "n_total_observations": 164,
+        "rmse_logB": 0.3158198998715236,
+        "mae_logB": 0.17126355532754067,
+        "n_qR_observations": 38,
+        "rmse_qR": 0.2168902211087966,
+        "mae_qR": 0.1085744524138215,
+        "observed_window_weighted_data_objective": 1.5414042696206862
+      }
+    ],
+    "matched_objective_comparison": [
+      {
+        "PINN_observed_window_weighted_data_objective": 1.3659911606585047,
+        "same_parameter_exact_ODE_observed_window_weighted_data_objective": 1.5414042696206862,
+        "exact_ODE_to_PINN_objective_ratio": 1.1284145271318007,
+        "scope": "control through its observed horizon; treated doses through 48 h; no treated 86-h endpoint"
+      }
+    ],
+    "interpretation": "This is a same-parameter mechanistic-consistency audit. Numerical differences are reported directly; no arbitrary acceptance threshold is imposed."
+  },
+  "R3.8_audit": {
+    "passed": true,
+    "expected_folds": 12,
+    "observed_folds": 12,
+    "held_doses": [
+      30.0,
+      40.0,
+      50.0,
+      100.0
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "max_inverse_parameter_change": 0.0,
+    "summary": [
+      {
+        "held_dose_ug_ml": 30.0,
+        "n_seeds": 3,
+        "predicted_qR_mean": 0.7009104241905857,
+        "predicted_qR_sd": 0.1554782244679639,
+        "full_fit_qR": 0.5643957455029937,
+        "observed_qR_mean": 0.5449817850666666,
+        "observed_qR_sd": 0.477346473657859,
+        "mean_abs_error": 0.155928639123919,
+        "mean_rmse_individual": 0.4771585665189817,
+        "mean_shift_from_full_fit_qR": 0.136514678687592,
+        "max_inverse_change_during_P1P2": 0.0
+      },
+      {
+        "held_dose_ug_ml": 40.0,
+        "n_seeds": 3,
+        "predicted_qR_mean": 0.969812570010884,
+        "predicted_qR_sd": 0.0033807322794428,
+        "full_fit_qR": 0.9608466232382404,
+        "observed_qR_mean": 0.9085136439714286,
+        "observed_qR_sd": 0.1336576696854896,
+        "mean_abs_error": 0.0612989260394554,
+        "mean_rmse_individual": 0.1381158888050644,
+        "mean_shift_from_full_fit_qR": 0.0089659467726434,
+        "max_inverse_change_during_P1P2": 0.0
+      },
+      {
+        "held_dose_ug_ml": 50.0,
+        "n_seeds": 3,
+        "predicted_qR_mean": 0.9978951606029904,
+        "predicted_qR_sd": 0.0012532102134074,
+        "full_fit_qR": 0.9967573626664508,
+        "observed_qR_mean": 0.9259566963714286,
+        "observed_qR_sd": 0.1568301097858291,
+        "mean_abs_error": 0.0719384642315618,
+        "mean_rmse_individual": 0.1620431980619441,
+        "mean_shift_from_full_fit_qR": 0.0012549146565978,
+        "max_inverse_change_during_P1P2": 0.0
+      },
+      {
+        "held_dose_ug_ml": 100.0,
+        "n_seeds": 3,
+        "predicted_qR_mean": 0.9999999809511112,
+        "predicted_qR_sd": 1.4530914563828646e-08,
+        "full_fit_qR": 0.9999999733965802,
+        "observed_qR_mean": 0.9380893413333334,
+        "observed_qR_sd": 0.0779281325548017,
+        "mean_abs_error": 0.0619106396177777,
+        "mean_rmse_individual": 0.0943058260878655,
+        "mean_shift_from_full_fit_qR": 1.0904312341963872e-08,
+        "max_inverse_change_during_P1P2": 0.0
+      }
+    ],
+    "overall_summary": [
+      {
+        "n_doses": 4,
+        "n_total_folds": 12,
+        "mean_abs_error_across_doses": 0.0877691672531785,
+        "median_abs_error_across_doses": 0.0669245519246698,
+        "mean_rmse_to_individual_observations": 0.2179058698684639,
+        "mean_shift_from_full_fit_qR": 0.0366838877552864,
+        "max_inverse_change_during_P1P2": 0.0
+      }
+    ]
+  },
+  "R3.9_audit": {
+    "passed": true,
+    "training_strategy": "base_11FR_only",
+    "expected_design_seed_runs": 25,
+    "observed_design_seed_runs": 25,
+    "designs": {
+      "R1": [
+        30.0
+      ],
+      "R2": [
+        30.0,
+        40.0
+      ],
+      "R3": [
+        30.0,
+        40.0,
+        50.0
+      ],
+      "R4": [
+        30.0,
+        40.0,
+        50.0,
+        100.0
+      ],
+      "R5": [
+        0.0,
+        30.0,
+        40.0,
+        50.0,
+        100.0
+      ]
+    },
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "max_negative_violation": 0.0,
+    "max_capacity_violation": 0.0,
+    "summary": [
+      {
+        "design": "R1",
+        "n_doses": 1,
+        "doses": "30",
+        "n_seeds": 5,
+        "validation_rmse_logB_mean": 0.2680708406316824,
+        "validation_rmse_logB_sd": 0.0018505593994636,
+        "validation_rmse_qR_mean": 0.5507755307850778,
+        "validation_rmse_qR_sd": 0.0072445255490346,
+        "max_negative_violation": 0.0,
+        "max_capacity_violation": 0.0,
+        "max_combined_raw_physics_rmse_per_h": 0.0004606805531393,
+        "max_scaled_physics_rmse": 0.0110563332753454,
+        "max_early_logR_physics_rmse": 0.13614857350478,
+        "mutation_probability_mean": 2.966263475553225e-06,
+        "mutation_probability_sd": 5.701872984776535e-07,
+        "mutation_probability_median": 2.983925885757605e-06,
+        "mutation_probability_min": 2.1276385646679133e-06,
+        "mutation_probability_max": 3.512290341724611e-06,
+        "mutation_probability_log10_sd": 0.0890043595034268,
+        "resistance_fitness_cost_mean": 0.134801236285991,
+        "resistance_fitness_cost_sd": 0.0100983364791626,
+        "resistance_fitness_cost_median": 0.134225530319672,
+        "resistance_fitness_cost_min": 0.1257223871850896,
+        "resistance_fitness_cost_max": 0.1506792900447514,
+        "sensitive_birth_rate_per_h_mean": 0.6147732480014373,
+        "sensitive_birth_rate_per_h_sd": 0.0097806160119909,
+        "sensitive_birth_rate_per_h_median": 0.6202089036040574,
+        "sensitive_birth_rate_per_h_min": 0.6037511746208261,
+        "sensitive_birth_rate_per_h_max": 0.6230138519332361,
+        "baseline_death_rate_per_h_mean": 0.3282984691855205,
+        "baseline_death_rate_per_h_sd": 0.002814224793876,
+        "baseline_death_rate_per_h_median": 0.3295838580499661,
+        "baseline_death_rate_per_h_min": 0.3243269443888005,
+        "baseline_death_rate_per_h_max": 0.3311507625102206,
+        "initial_resistant_fraction_shared_mean": 3.3257739398661407e-06,
+        "initial_resistant_fraction_shared_sd": 5.546570861733037e-07,
+        "initial_resistant_fraction_shared_median": 3.36578193571128e-06,
+        "initial_resistant_fraction_shared_min": 2.4350106289033903e-06,
+        "initial_resistant_fraction_shared_max": 3.837508576504428e-06,
+        "initial_resistant_fraction_shared_log10_sd": 0.0786139662819692,
+        "resistant_relative_drug_sensitivity_mean": 0.4839528973607855,
+        "resistant_relative_drug_sensitivity_sd": 0.0184180030273331,
+        "resistant_relative_drug_sensitivity_median": 0.4917035077895438,
+        "resistant_relative_drug_sensitivity_min": 0.458375562137187,
+        "resistant_relative_drug_sensitivity_max": 0.5049580209432409,
+        "kill_activation_onset_h_mean": 16.801064664956506,
+        "kill_activation_onset_h_sd": 0.0654475234042925,
+        "kill_activation_onset_h_median": 16.785986927790002,
+        "kill_activation_onset_h_min": 16.75020500517798,
+        "kill_activation_onset_h_max": 16.909842408651283,
+        "kill_activation_per_h_mean": 0.2288273723133779,
+        "kill_activation_per_h_sd": 0.0080504188192073,
+        "kill_activation_per_h_median": 0.2279486215859821,
+        "kill_activation_per_h_min": 0.2193109860871698,
+        "kill_activation_per_h_max": 0.2406296437781498,
+        "kill_30_per_h_mean": 0.5027833993506859,
+        "kill_30_per_h_sd": 0.0057067430873021,
+        "kill_40_per_h_mean": null,
+        "kill_40_per_h_sd": null,
+        "kill_50_per_h_mean": null,
+        "kill_50_per_h_sd": null,
+        "kill_100_per_h_mean": null,
+        "kill_100_per_h_sd": null
+      },
+      {
+        "design": "R2",
+        "n_doses": 2,
+        "doses": "30+40",
+        "n_seeds": 5,
+        "validation_rmse_logB_mean": 0.3076770741594523,
+        "validation_rmse_logB_sd": 0.0023401149933724,
+        "validation_rmse_qR_mean": 0.4380768621831982,
+        "validation_rmse_qR_sd": 0.0073207618180483,
+        "max_negative_violation": 0.0,
+        "max_capacity_violation": 0.0,
+        "max_combined_raw_physics_rmse_per_h": 0.0002543727755885,
+        "max_scaled_physics_rmse": 0.0061049466141262,
+        "max_early_logR_physics_rmse": 0.0341140086830995,
+        "mutation_probability_mean": 2.5431085787385577e-07,
+        "mutation_probability_sd": 3.6108483003885033e-07,
+        "mutation_probability_median": 4.2510468769538206e-08,
+        "mutation_probability_min": 1.0956240197085474e-09,
+        "mutation_probability_max": 8.348489676707173e-07,
+        "mutation_probability_log10_sd": 1.167211739659454,
+        "resistance_fitness_cost_mean": 0.1036723372012998,
+        "resistance_fitness_cost_sd": 0.0631775014634259,
+        "resistance_fitness_cost_median": 0.1028229065831614,
+        "resistance_fitness_cost_min": 0.024464881506637,
+        "resistance_fitness_cost_max": 0.1801470665085551,
+        "sensitive_birth_rate_per_h_mean": 0.9417677644876286,
+        "sensitive_birth_rate_per_h_sd": 0.3666283365616625,
+        "sensitive_birth_rate_per_h_median": 0.7459909762196254,
+        "sensitive_birth_rate_per_h_min": 0.6194585415448091,
+        "sensitive_birth_rate_per_h_max": 1.350219814534625,
+        "baseline_death_rate_per_h_mean": 0.4123214529734532,
+        "baseline_death_rate_per_h_sd": 0.116617262906153,
+        "baseline_death_rate_per_h_median": 0.35311032434351,
+        "baseline_death_rate_per_h_min": 0.310497130677067,
+        "baseline_death_rate_per_h_max": 0.5452828723223608,
+        "initial_resistant_fraction_shared_mean": 6.620138840993221e-07,
+        "initial_resistant_fraction_shared_sd": 6.293901907347695e-07,
+        "initial_resistant_fraction_shared_median": 4.656013007665436e-07,
+        "initial_resistant_fraction_shared_min": 3.6165011595177885e-08,
+        "initial_resistant_fraction_shared_max": 1.4566568431676335e-06,
+        "initial_resistant_fraction_shared_log10_sd": 0.6630834306085267,
+        "resistant_relative_drug_sensitivity_mean": 0.6025924518434751,
+        "resistant_relative_drug_sensitivity_sd": 0.2493704553259362,
+        "resistant_relative_drug_sensitivity_median": 0.4763997637913482,
+        "resistant_relative_drug_sensitivity_min": 0.3872860081856385,
+        "resistant_relative_drug_sensitivity_max": 0.879303504864259,
+        "kill_activation_onset_h_mean": 14.730046346894216,
+        "kill_activation_onset_h_sd": 1.225014171688941,
+        "kill_activation_onset_h_median": 15.200352166280616,
+        "kill_activation_onset_h_min": 13.385500028332585,
+        "kill_activation_onset_h_max": 15.887891987621853,
+        "kill_activation_per_h_mean": 0.1919246456242605,
+        "kill_activation_per_h_sd": 0.0290294177971429,
+        "kill_activation_per_h_median": 0.2004863977678446,
+        "kill_activation_per_h_min": 0.1596255072570959,
+        "kill_activation_per_h_max": 0.2263093026236229,
+        "kill_30_per_h_mean": 0.6536580253290303,
+        "kill_30_per_h_sd": 0.1497464525448763,
+        "kill_40_per_h_mean": 0.642081805942748,
+        "kill_40_per_h_sd": 0.1140906062532392,
+        "kill_50_per_h_mean": null,
+        "kill_50_per_h_sd": null,
+        "kill_100_per_h_mean": null,
+        "kill_100_per_h_sd": null
+      },
+      {
+        "design": "R3",
+        "n_doses": 3,
+        "doses": "30+40+50",
+        "n_seeds": 5,
+        "validation_rmse_logB_mean": 0.4092143966947015,
+        "validation_rmse_logB_sd": 0.0201060488519553,
+        "validation_rmse_qR_mean": 0.3671036117848226,
+        "validation_rmse_qR_sd": 0.0080357549844091,
+        "max_negative_violation": 0.0,
+        "max_capacity_violation": 0.0,
+        "max_combined_raw_physics_rmse_per_h": 0.000988030073323,
+        "max_scaled_physics_rmse": 0.023712721759752,
+        "max_early_logR_physics_rmse": 0.1319770697176254,
+        "mutation_probability_mean": 2.2884169666550835e-07,
+        "mutation_probability_sd": 2.186150145400764e-07,
+        "mutation_probability_median": 2.0296813827205573e-07,
+        "mutation_probability_min": 2.1105864935069545e-08,
+        "mutation_probability_max": 5.939929958016682e-07,
+        "mutation_probability_log10_sd": 0.5336513105859503,
+        "resistance_fitness_cost_mean": 0.0873280704676564,
+        "resistance_fitness_cost_sd": 0.0343392136560738,
+        "resistance_fitness_cost_median": 0.0754708125895459,
+        "resistance_fitness_cost_min": 0.0452049739964596,
+        "resistance_fitness_cost_max": 0.1304251114302532,
+        "sensitive_birth_rate_per_h_mean": 0.8484786384477129,
+        "sensitive_birth_rate_per_h_sd": 0.2327989543448434,
+        "sensitive_birth_rate_per_h_median": 0.6964875159656189,
+        "sensitive_birth_rate_per_h_min": 0.6491223413657605,
+        "sensitive_birth_rate_per_h_max": 1.1138559063506657,
+        "baseline_death_rate_per_h_mean": 0.4256255784201587,
+        "baseline_death_rate_per_h_sd": 0.0919172273736159,
+        "baseline_death_rate_per_h_median": 0.3634666207278528,
+        "baseline_death_rate_per_h_min": 0.3510020554174082,
+        "baseline_death_rate_per_h_max": 0.5276164806809974,
+        "initial_resistant_fraction_shared_mean": 9.90568789281862e-07,
+        "initial_resistant_fraction_shared_sd": 6.918622617254265e-07,
+        "initial_resistant_fraction_shared_median": 7.31970883170672e-07,
+        "initial_resistant_fraction_shared_min": 3.193395165319911e-07,
+        "initial_resistant_fraction_shared_max": 1.7636615200866709e-06,
+        "initial_resistant_fraction_shared_log10_sd": 0.3359664166933551,
+        "resistant_relative_drug_sensitivity_mean": 0.5847593669382923,
+        "resistant_relative_drug_sensitivity_sd": 0.2082891076739031,
+        "resistant_relative_drug_sensitivity_median": 0.4508107943270696,
+        "resistant_relative_drug_sensitivity_min": 0.4007086392118503,
+        "resistant_relative_drug_sensitivity_max": 0.8141504031667317,
+        "kill_activation_onset_h_mean": 15.318083825988143,
+        "kill_activation_onset_h_sd": 0.2838875892479162,
+        "kill_activation_onset_h_median": 15.392148025280918,
+        "kill_activation_onset_h_min": 14.983037100665996,
+        "kill_activation_onset_h_max": 15.665849553378433,
+        "kill_activation_per_h_mean": 0.2119549208167723,
+        "kill_activation_per_h_sd": 0.0157603492916414,
+        "kill_activation_per_h_median": 0.2094505097184974,
+        "kill_activation_per_h_min": 0.1899176273522896,
+        "kill_activation_per_h_max": 0.2320420907022092,
+        "kill_30_per_h_mean": 0.5631773189255196,
+        "kill_30_per_h_sd": 0.0766789784856912,
+        "kill_40_per_h_mean": 0.5264159812325901,
+        "kill_40_per_h_sd": 0.0604852418649994,
+        "kill_50_per_h_mean": 0.4989344190278618,
+        "kill_50_per_h_sd": 0.0546534074684913,
+        "kill_100_per_h_mean": null,
+        "kill_100_per_h_sd": null
+      },
+      {
+        "design": "R4",
+        "n_doses": 4,
+        "doses": "30+40+50+100",
+        "n_seeds": 5,
+        "validation_rmse_logB_mean": 0.3840598187414925,
+        "validation_rmse_logB_sd": 0.0013531743822995,
+        "validation_rmse_qR_mean": 0.3157277530393744,
+        "validation_rmse_qR_sd": 0.0012370457450877,
+        "max_negative_violation": 0.0,
+        "max_capacity_violation": 0.0,
+        "max_combined_raw_physics_rmse_per_h": 0.0006560104313564,
+        "max_scaled_physics_rmse": 0.0157442503525556,
+        "max_early_logR_physics_rmse": 0.1754996175361949,
+        "mutation_probability_mean": 1.516397669522833e-07,
+        "mutation_probability_sd": 8.08544642610589e-08,
+        "mutation_probability_median": 1.7577199586228529e-07,
+        "mutation_probability_min": 5.302599159275237e-08,
+        "mutation_probability_max": 2.4713820646240294e-07,
+        "mutation_probability_log10_sd": 0.2810204700248776,
+        "resistance_fitness_cost_mean": 0.0123481141392147,
+        "resistance_fitness_cost_sd": 0.004321073572221,
+        "resistance_fitness_cost_median": 0.0095117396617246,
+        "resistance_fitness_cost_min": 0.0089909691024098,
+        "resistance_fitness_cost_max": 0.0183990770414981,
+        "sensitive_birth_rate_per_h_mean": 0.7856546300437437,
+        "sensitive_birth_rate_per_h_sd": 0.0157843450498215,
+        "sensitive_birth_rate_per_h_median": 0.7832855923926569,
+        "sensitive_birth_rate_per_h_min": 0.7692247012928527,
+        "sensitive_birth_rate_per_h_max": 0.805144641657557,
+        "baseline_death_rate_per_h_mean": 0.3899259951056392,
+        "baseline_death_rate_per_h_sd": 0.006125673169433,
+        "baseline_death_rate_per_h_median": 0.3898115067496955,
+        "baseline_death_rate_per_h_min": 0.3818361151473886,
+        "baseline_death_rate_per_h_max": 0.3983604524443769,
+        "initial_resistant_fraction_shared_mean": 7.736781142486088e-06,
+        "initial_resistant_fraction_shared_sd": 1.6661212066208384e-06,
+        "initial_resistant_fraction_shared_median": 7.712134917849908e-06,
+        "initial_resistant_fraction_shared_min": 6.157790372642242e-06,
+        "initial_resistant_fraction_shared_max": 1.0223639727586233e-05,
+        "initial_resistant_fraction_shared_log10_sd": 0.0911762577155964,
+        "resistant_relative_drug_sensitivity_mean": 0.7730862414116496,
+        "resistant_relative_drug_sensitivity_sd": 0.006022961258698,
+        "resistant_relative_drug_sensitivity_median": 0.7757783555788208,
+        "resistant_relative_drug_sensitivity_min": 0.7650894838117008,
+        "resistant_relative_drug_sensitivity_max": 0.7787047612673533,
+        "kill_activation_onset_h_mean": 14.554069322899272,
+        "kill_activation_onset_h_sd": 0.1946672996330923,
+        "kill_activation_onset_h_median": 14.535035731912537,
+        "kill_activation_onset_h_min": 14.312959254725914,
+        "kill_activation_onset_h_max": 14.844571161808808,
+        "kill_activation_per_h_mean": 0.2418877290252861,
+        "kill_activation_per_h_sd": 0.0200745373921696,
+        "kill_activation_per_h_median": 0.2391802814470903,
+        "kill_activation_per_h_min": 0.2189945254135649,
+        "kill_activation_per_h_max": 0.2732587132298205,
+        "kill_30_per_h_mean": 0.5446404327202221,
+        "kill_30_per_h_sd": 0.0144248047768153,
+        "kill_40_per_h_mean": 0.4915411003306889,
+        "kill_40_per_h_sd": 0.0162100858918651,
+        "kill_50_per_h_mean": 0.4655582903908506,
+        "kill_50_per_h_sd": 0.0178691182528904,
+        "kill_100_per_h_mean": 0.4725456848065025,
+        "kill_100_per_h_sd": 0.0180434283351493
+      },
+      {
+        "design": "R5",
+        "n_doses": 5,
+        "doses": "0+30+40+50+100",
+        "n_seeds": 5,
+        "validation_rmse_logB_mean": 0.2662155749785639,
+        "validation_rmse_logB_sd": 0.0026088870393098,
+        "validation_rmse_qR_mean": 0.1937902947152371,
+        "validation_rmse_qR_sd": 0.0019199705920472,
+        "max_negative_violation": 0.0,
+        "max_capacity_violation": 0.0,
+        "max_combined_raw_physics_rmse_per_h": 0.001598521297006,
+        "max_scaled_physics_rmse": 0.0383645111281449,
+        "max_early_logR_physics_rmse": 0.1139064359233312,
+        "mutation_probability_mean": 9.977302703542395e-06,
+        "mutation_probability_sd": 7.887808157443946e-06,
+        "mutation_probability_median": 1.1497344273520037e-05,
+        "mutation_probability_min": 1.2069377212540495e-06,
+        "mutation_probability_max": 2.0918754443245875e-05,
+        "mutation_probability_log10_sd": 0.503091460250928,
+        "resistance_fitness_cost_mean": 0.1130661721685296,
+        "resistance_fitness_cost_sd": 0.0504680049552157,
+        "resistance_fitness_cost_median": 0.1214315930844089,
+        "resistance_fitness_cost_min": 0.0593074243240401,
+        "resistance_fitness_cost_max": 0.1704738527765035,
+        "sensitive_birth_rate_per_h_mean": 0.6971129241580116,
+        "sensitive_birth_rate_per_h_sd": 0.0769738088975626,
+        "sensitive_birth_rate_per_h_median": 0.6899097621278467,
+        "sensitive_birth_rate_per_h_min": 0.6321190474563965,
+        "sensitive_birth_rate_per_h_max": 0.8265523415178493,
+        "baseline_death_rate_per_h_mean": 0.3516286016044606,
+        "baseline_death_rate_per_h_sd": 0.027417024483247,
+        "baseline_death_rate_per_h_median": 0.3480674394152812,
+        "baseline_death_rate_per_h_min": 0.3216105541533194,
+        "baseline_death_rate_per_h_max": 0.3950452334386403,
+        "initial_resistant_fraction_shared_mean": 4.481942969458795e-05,
+        "initial_resistant_fraction_shared_sd": 2.153534028305798e-05,
+        "initial_resistant_fraction_shared_median": 3.819468820444719e-05,
+        "initial_resistant_fraction_shared_min": 2.2951592149304502e-05,
+        "initial_resistant_fraction_shared_max": 7.57890432970864e-05,
+        "initial_resistant_fraction_shared_log10_sd": 0.2092070264353464,
+        "resistant_relative_drug_sensitivity_mean": 0.6653366570413,
+        "resistant_relative_drug_sensitivity_sd": 0.0410674249537702,
+        "resistant_relative_drug_sensitivity_median": 0.6760976436132152,
+        "resistant_relative_drug_sensitivity_min": 0.6013997981783183,
+        "resistant_relative_drug_sensitivity_max": 0.7139211679755796,
+        "kill_activation_onset_h_mean": 13.291980189539254,
+        "kill_activation_onset_h_sd": 0.8258184286115631,
+        "kill_activation_onset_h_median": 12.921272937037912,
+        "kill_activation_onset_h_min": 12.658670829792651,
+        "kill_activation_onset_h_max": 14.705233874782644,
+        "kill_activation_per_h_mean": 0.2014391281959769,
+        "kill_activation_per_h_sd": 0.0132866629561925,
+        "kill_activation_per_h_median": 0.2014951614891846,
+        "kill_activation_per_h_min": 0.186583109928596,
+        "kill_activation_per_h_max": 0.2195556594488975,
+        "kill_30_per_h_mean": 0.5005725732565172,
+        "kill_30_per_h_sd": 0.0316621964566997,
+        "kill_40_per_h_mean": 0.4152663369566045,
+        "kill_40_per_h_sd": 0.0263256461140873,
+        "kill_50_per_h_mean": 0.412732947548353,
+        "kill_50_per_h_sd": 0.0279338025104019,
+        "kill_100_per_h_mean": 0.3901261185719072,
+        "kill_100_per_h_sd": 0.0344963794081621
+      }
+    ]
+  },
+  "R3.10_endpoint_validation": {
+    "available": true,
+    "comparison_level": "dose-wise unpaired endpoint distributions",
+    "treated_86h_used_for_fit_or_tuning": false,
+    "forecast_definition": "Exact final 11F-R ODE propagation from exact observed 48-h B/qR states to 86 h using the frozen final inverse parameters.",
+    "endpoint_counts": {
+      "30.0": 6,
+      "40.0": 7,
+      "50.0": 7,
+      "100.0": 6
+    },
+    "model_vs_persistence": [
+      {
+        "variable": "log10_B86",
+        "mean_Wasserstein_11FR": 5.237627330510108,
+        "mean_Wasserstein_persistence": 3.9990881654761905,
+        "delta_Wasserstein_11FR_minus_persistence": 1.2385391650339175,
+        "mean_quantile_RMSE_11FR": 5.332255113899324,
+        "mean_quantile_RMSE_persistence": 4.161286277338266
+      },
+      {
+        "variable": "qR86",
+        "mean_Wasserstein_11FR": 0.11309370008037009,
+        "mean_Wasserstein_persistence": 0.14638894334583333,
+        "delta_Wasserstein_11FR_minus_persistence": -0.03329524326546324,
+        "mean_quantile_RMSE_11FR": 0.13307345066790777,
+        "mean_quantile_RMSE_persistence": 0.1870396102777785
+      }
+    ],
+    "dose_summary": [
+      {
+        "dose_ug_ml": 30.0,
+        "n_48h_forecast_states": 6,
+        "n_86h_unpaired_observations": 6,
+        "forecast_mean_log10_B86": 2.3132336410323653,
+        "forecast_sd_log10_B86": 1.3832669121996277,
+        "observed_mean_log10_B86": 8.583573733333333,
+        "observed_sd_log10_B86": 2.2715855814947608,
+        "forecast_mean_qR86": 0.918332995309345,
+        "forecast_sd_qR86": 0.19967890228381505,
+        "observed_mean_qR86": 0.9153202158,
+        "observed_sd_qR86": 0.06824079393758663
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "n_48h_forecast_states": 7,
+        "n_86h_unpaired_observations": 7,
+        "forecast_mean_log10_B86": 4.514338023922092,
+        "forecast_sd_log10_B86": 0.3484694051107989,
+        "observed_mean_log10_B86": 9.540908585714286,
+        "observed_sd_log10_B86": 0.077511752540554,
+        "forecast_mean_qR86": 0.9999984991259842,
+        "forecast_sd_qR86": 2.3238333288496277e-06,
+        "observed_mean_qR86": 0.8420949226000001,
+        "observed_sd_qR86": 0.09390018754384113
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "n_48h_forecast_states": 7,
+        "n_86h_unpaired_observations": 7,
+        "forecast_mean_log10_B86": 5.005874267181645,
+        "forecast_sd_log10_B86": 0.8975625976359113,
+        "observed_mean_log10_B86": 9.437492614285715,
+        "observed_sd_log10_B86": 0.08193939569475368,
+        "forecast_mean_qR86": 0.999999771859447,
+        "forecast_sd_qR86": 5.255002892108252e-07,
+        "observed_mean_qR86": 0.9062148808857143,
+        "observed_sd_qR86": 0.09813030335706964
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "n_48h_forecast_states": 6,
+        "n_86h_unpaired_observations": 6,
+        "forecast_mean_log10_B86": 4.3549231291567985,
+        "forecast_sd_log10_B86": 0.5337805104565345,
+        "observed_mean_log10_B86": 9.576903450000001,
+        "observed_sd_log10_B86": 0.26806766906003965,
+        "forecast_mean_qR86": 0.9999993664039956,
+        "forecast_sd_qR86": 1.4855116798907436e-06,
+        "observed_mean_qR86": 0.9157669507833334,
+        "observed_sd_qR86": 0.14157722917557386
+      }
+    ],
+    "distribution_metrics": [
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "log10_B86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 2.3132336410323653,
+        "predicted_sd": 1.3832669121996277,
+        "observed_mean": 8.583573733333333,
+        "observed_sd": 2.2715855814947608,
+        "abs_error_in_mean": 6.270340092300968,
+        "wasserstein_distance": 6.270340092300969,
+        "quantile_rmse": 6.569366432485064
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 4.521690133333333,
+        "predicted_sd": 0.7848762910864557,
+        "observed_mean": 8.583573733333333,
+        "observed_sd": 2.2715855814947608,
+        "abs_error_in_mean": 4.0618836,
+        "wasserstein_distance": 4.0618836,
+        "quantile_rmse": 4.61921080856576
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "qR86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.918332995309345,
+        "predicted_sd": 0.19967890228381505,
+        "observed_mean": 0.9153202158,
+        "observed_sd": 0.06824079393758663,
+        "abs_error_in_mean": 0.003012779509344976,
+        "wasserstein_distance": 0.11645391720110139,
+        "quantile_rmse": 0.11244308847047539
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.5449817850666666,
+        "predicted_sd": 0.47734647365785904,
+        "observed_mean": 0.9153202158,
+        "observed_sd": 0.06824079393758663,
+        "abs_error_in_mean": 0.3703384307333334,
+        "wasserstein_distance": 0.3752403915333333,
+        "quantile_rmse": 0.5041303996812976
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "log10_B86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 4.514338023922092,
+        "predicted_sd": 0.3484694051107989,
+        "observed_mean": 9.540908585714286,
+        "observed_sd": 0.077511752540554,
+        "abs_error_in_mean": 5.026570561792194,
+        "wasserstein_distance": 5.026570561792193,
+        "quantile_rmse": 5.037740623851245
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 5.524082457142858,
+        "predicted_sd": 0.3681518053671468,
+        "observed_mean": 9.540908585714286,
+        "observed_sd": 0.077511752540554,
+        "abs_error_in_mean": 4.016826128571428,
+        "wasserstein_distance": 4.016826128571429,
+        "quantile_rmse": 4.034244356933406
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "qR86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9999984991259842,
+        "predicted_sd": 2.3238333288496277e-06,
+        "observed_mean": 0.8420949226000001,
+        "observed_sd": 0.09390018754384113,
+        "abs_error_in_mean": 0.15790357652598408,
+        "wasserstein_distance": 0.1579035765259841,
+        "quantile_rmse": 0.17169061262460916
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9085136439714285,
+        "predicted_sd": 0.1336576696854896,
+        "observed_mean": 0.8420949226000001,
+        "observed_sd": 0.09390018754384113,
+        "abs_error_in_mean": 0.06641872137142846,
+        "wasserstein_distance": 0.08864094360000002,
+        "quantile_rmse": 0.10393896705056588
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "log10_B86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 5.005874267181645,
+        "predicted_sd": 0.8975625976359113,
+        "observed_mean": 9.437492614285715,
+        "observed_sd": 0.08193939569475368,
+        "abs_error_in_mean": 4.431618347104069,
+        "wasserstein_distance": 4.431618347104068,
+        "quantile_rmse": 4.521952902240429
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 5.770644814285714,
+        "predicted_sd": 0.8630764890002034,
+        "observed_mean": 9.437492614285715,
+        "observed_sd": 0.08193939569475368,
+        "abs_error_in_mean": 3.6668478,
+        "wasserstein_distance": 3.6668478,
+        "quantile_rmse": 3.758258771705099
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "qR86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.999999771859447,
+        "predicted_sd": 5.255002892108252e-07,
+        "observed_mean": 0.9062148808857143,
+        "observed_sd": 0.09813030335706964,
+        "abs_error_in_mean": 0.09378489097373266,
+        "wasserstein_distance": 0.09378489097373256,
+        "quantile_rmse": 0.12621017639672194
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9259566963714285,
+        "predicted_sd": 0.15683010978582915,
+        "observed_mean": 0.9062148808857143,
+        "observed_sd": 0.09813030335706964,
+        "abs_error_in_mean": 0.019741815485714187,
+        "wasserstein_distance": 0.08199702060000001,
+        "quantile_rmse": 0.09017830336965263
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "log10_B86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 4.3549231291567985,
+        "predicted_sd": 0.5337805104565345,
+        "observed_mean": 9.576903450000001,
+        "observed_sd": 0.26806766906003965,
+        "abs_error_in_mean": 5.221980320843203,
+        "wasserstein_distance": 5.221980320843201,
+        "quantile_rmse": 5.199960497020555
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 5.326108316666667,
+        "predicted_sd": 0.560585773163959,
+        "observed_mean": 9.576903450000001,
+        "observed_sd": 0.26806766906003965,
+        "abs_error_in_mean": 4.250795133333335,
+        "wasserstein_distance": 4.250795133333333,
+        "quantile_rmse": 4.233431172148799
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "qR86",
+        "model": "11FR_mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.9999993664039956,
+        "predicted_sd": 1.4855116798907436e-06,
+        "observed_mean": 0.9157669507833334,
+        "observed_sd": 0.14157722917557386,
+        "abs_error_in_mean": 0.0842324156206622,
+        "wasserstein_distance": 0.08423241562066229,
+        "quantile_rmse": 0.12194992517982459
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.9380893413333334,
+        "predicted_sd": 0.07792813255480174,
+        "observed_mean": 0.9157669507833334,
+        "observed_sd": 0.14157722917557386,
+        "abs_error_in_mean": 0.02232239055000007,
+        "wasserstein_distance": 0.03967741764999998,
+        "quantile_rmse": 0.04991077100959787
+      }
+    ],
+    "data_driven_interpretation": [
+      {
+        "variable": "log10_B86",
+        "delta_Wasserstein_11FR_minus_persistence": 1.2385391650339175,
+        "comparison": "48-h persistence closer than 11F-R forecast"
+      },
+      {
+        "variable": "qR86",
+        "delta_Wasserstein_11FR_minus_persistence": -0.03329524326546324,
+        "comparison": "11F-R forecast closer than 48-h persistence"
+      }
+    ]
+  },
+  "main_analysis_status": {
+    "R3.7_full_11FR_inverse_fit": true,
+    "P1_state_only_pointwise_refinement": true,
+    "P2_state_only_integral_refinement": true,
+    "R3.8_leave_one_dose_qR": true,
+    "R3.9_nested_treatment_diversity": true,
+    "R3.10_independent_86h_unpaired_validation": true
+  },
+  "final_audit_status": {
+    "P2_inverse_parameter_freeze": true,
+    "hard_nonnegativity": true,
+    "hard_capacity": true,
+    "physics_fidelity_recomputed": true,
+    "early_log_physics_recomputed": true,
+    "loss_balance_recomputed": true,
+    "full_0_48h_PINN_exact_ODE_consistency_recomputed": true,
+    "R3.8_exact_12_fold_audit": true,
+    "R3.9_exact_25_run_audit": true,
+    "R3.10_output_schema_verified": true
+  },
+  "artifacts_and_hashes": {
+    "primary_dataset": {
+      "path": "data\\real\\Ramsayer_PRIMARY_PINN_data.csv",
+      "exists": true,
+      "sha256": "82581c715cc4f3a751d406d313baac43f1a10d100e68640c7bbf87c88be0ef76"
+    },
+    "qR48_exact_linked_dataset": {
+      "path": "data\\real\\Ramsayer_qR_48h_EXACT_linked.csv",
+      "exists": true,
+      "sha256": "0437269657cd013ddac52e6aa5134b960e164f156d0f4bd7ac89125cdf3d4578"
+    },
+    "qR86_independent_endpoint_dataset": {
+      "path": "data\\real\\Ramsayer_qR_86h_ENDPOINT_unpaired.csv",
+      "exists": true,
+      "sha256": "a18d149d5eb8454bb1a45877711f6dff0d8cc6972f10bcd2d6ea3ef0b544ed05"
+    },
+    "R37_base_checkpoint": {
+      "path": "results\\real_data\\models\\final_R37_full_real_shared_dose_conditioned_PINN_11FR.pt",
+      "exists": true,
+      "sha256": "a7aa7f42bd95877e7b1655cd91c18f27127929bd6ea819ab3a270a29dcade920"
+    },
+    "P2_checkpoint": {
+      "path": "results\\real_data\\models\\final_R37_11FR_stateonly_multiscale_integral_defect_x10.pt",
+      "exists": true,
+      "sha256": "d970879bf31ec9b391d9b5d5b2c441708e21d44a62981c668f7ecbe0b0d87346"
+    },
+    "R38_raw": {
+      "path": "results\\real_data\\tables\\final_R38_11FR_P1P2_shared_leave_one_dose_qR_raw.csv",
+      "exists": true,
+      "sha256": "4435d8dc592eaad28a6b060cd68f875f0aa3aff5625c03535abcdd372e68843b"
+    },
+    "R38_summary": {
+      "path": "results\\real_data\\tables\\final_R38_11FR_P1P2_shared_leave_one_dose_qR_summary.csv",
+      "exists": true,
+      "sha256": "37f6fde81775df255c75860a62403af8b55c9452d5296aafe421062500a8e60d"
+    },
+    "R39_raw": {
+      "path": "results\\real_data\\tables\\final_R39_11FR_nested_treatment_diversity_BASE_ONLY_raw.csv",
+      "exists": true,
+      "sha256": "316c8f25030ac7a89ddbccb1c9e3b24753e36fc3fe659f360c81f54137052501"
+    },
+    "R39_summary": {
+      "path": "results\\real_data\\tables\\final_R39_11FR_nested_treatment_diversity_BASE_ONLY_summary.csv",
+      "exists": true,
+      "sha256": "0513d13eb5a129a87cf8ab98e7753b329349b9c9302fa0927401f602fd33e9e8"
+    },
+    "R310_population_forecasts": {
+      "path": "results\\real_data\\tables\\final_R310_11FR_86h_unpaired_distribution_forecast_population_forecasts_from_48h.csv",
+      "exists": true,
+      "sha256": "729e28dbb394197902f3fcacf9c68c8c372f81fe519b4d449f5a99ce37c934b3"
+    },
+    "R310_model_vs_persistence": {
+      "path": "results\\real_data\\tables\\final_R310_11FR_86h_unpaired_distribution_forecast_model_vs_persistence.csv",
+      "exists": true,
+      "sha256": "4db178117ea326c6bb350930d71fc90cfd8243f719d519c5e8ad0b6b76d9c579"
+    },
+    "final_parameter_table": {
+      "path": "results\\real_data\\tables\\final_R37_shared_dose_conditioned_11FR_FINAL_parameters.csv",
+      "exists": true,
+      "sha256": "3484ab9db0cc22b91aa2d705f55218d4826534168e3c9a61bb3077764a093c28"
+    },
+    "final_PINN_ODE_objective": {
+      "path": "results\\real_data\\tables\\final_R37_shared_dose_conditioned_11FR_FINAL_P2_PINN_vs_ODE_objective.csv",
+      "exists": true,
+      "sha256": "ffb3256319f1d6650f9c3aa1da9b2cac44a5c6c796118bee79ad039f4152d289"
+    },
+    "final_status_table": {
+      "path": "results\\real_data\\tables\\final_FINAL_11FR_analysis_status.csv",
+      "exists": true,
+      "sha256": "78d5b8a983f665d0a4f87630841289aa89992b4549afac1b3ec4e2def065e65c"
+    }
+  },
+  "scientific_scope": {
+    "hard_constraints": "The architecture analytically enforces non-negativity and normalized capacity/simplex feasibility; numerical audits verify implementation.",
+    "parameter_interpretation": "Real-data inverse parameters are model-conditioned/effective estimates. Because ground-truth biological parameters are unavailable, they must not be presented as uniquely identified biological constants without separate identifiability evidence.",
+    "R3.10_scope": "The 86-h treated observations are independent and unpaired. Report only distribution-level validation, never individual 48-to-86 h replicate errors."
+  }
+}

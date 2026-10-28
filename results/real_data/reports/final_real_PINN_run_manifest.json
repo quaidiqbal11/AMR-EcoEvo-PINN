@@ -1,0 +1,643 @@
+{
+  "run_label": "final",
+  "quick_mode": false,
+  "execution_mode": "FINAL",
+  "device": "cuda",
+  "software": {
+    "torch_version": "2.7.1+cu118",
+    "numpy_version": "2.4.0",
+    "pandas_version": "2.3.3",
+    "scipy_version": "1.16.3"
+  },
+  "normalization": {
+    "K_REAL": 11180001253.8321,
+    "capacity_margin": 1.3,
+    "scope_note": "K_REAL in the primary PINN analysis is computed before the grouped train/validation split. Validation is therefore internal grouped validation rather than a completely untouched external test."
+  },
+  "architecture": {
+    "name": "shared_dose_conditioned_hard_PINN",
+    "network_width": 64,
+    "network_depth": 4,
+    "pretrain_epochs": 1500,
+    "physics_warmup_epochs": 1200,
+    "adam_epochs": 8000,
+    "lbfgs_max_iter": 300,
+    "collocation_points_per_dose": 768
+  },
+  "full_model_parameters": {
+    "mutation_probability": 3.9535972258800885e-06,
+    "resistance_fitness_cost": 0.21229003556116613,
+    "sensitive_birth_rate_per_h": 0.560470715120651,
+    "death_rate_per_h": 0.387260569042336,
+    "initial_resistant_fraction_shared": 3.601297721236033e-05,
+    "q0_dose_0": 3.601297721236033e-05,
+    "q0_dose_30": 3.601297721236033e-05,
+    "q0_dose_40": 3.601297721236033e-05,
+    "q0_dose_50": 3.601297721236033e-05,
+    "q0_dose_100": 3.601297721236033e-05
+  },
+  "train_metrics": {
+    "rmse_logB": 0.3140811636065279,
+    "mae_logB": 0.2074336165038412,
+    "r2_logB": 0.966218565369264,
+    "rmse_qR": 0.19850916369161087,
+    "mae_qR": 0.10980220103356611
+  },
+  "validation_metrics": {
+    "rmse_logB": 0.2720409684049843,
+    "mae_logB": 0.16630929370173986,
+    "r2_logB": 0.975038153739195,
+    "rmse_qR": 0.20620950189753345,
+    "mae_qR": 0.12346418347241263
+  },
+  "feasibility": {
+    "available": true,
+    "max_negative_violation": 0.0,
+    "max_capacity_violation": 0.0,
+    "dosewise_records": [
+      {
+        "dose_ug_ml": 0.0,
+        "min_s_over_K": 0.3117053942297904,
+        "min_r_over_K": 5.555978974570167e-06,
+        "max_total_over_K": 0.3689624314740698,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "min_s_over_K": 2.0193045814936706e-06,
+        "min_r_over_K": 1.5515768588025148e-06,
+        "max_total_over_K": 0.3689624314740698,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "min_s_over_K": 3.5791398216340907e-07,
+        "min_r_over_K": 5.0119037438100955e-06,
+        "max_total_over_K": 0.36896243147406976,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "min_s_over_K": 1.8540096090397745e-08,
+        "min_r_over_K": 9.853067230045804e-06,
+        "max_total_over_K": 0.36896243147406976,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "min_s_over_K": 2.2564353100546483e-12,
+        "min_r_over_K": 1.0078363431923017e-05,
+        "max_total_over_K": 0.3689624314740698,
+        "negative_violation": 0.0,
+        "capacity_violation": 0.0
+      }
+    ]
+  },
+  "physics_and_loss_audits": {
+    "absolute_physics_audit_available": true,
+    "early_log_physics_audit_available": true,
+    "loss_balance_available": true,
+    "absolute_physics_records": [
+      {
+        "dose_ug_ml": 0.0,
+        "rmse_Rs_raw_per_h": 0.003145899826199444,
+        "rmse_Rr_raw_per_h": 3.1668056703939576e-08,
+        "combined_raw_rmse_per_h": 0.0022244871001519157,
+        "combined_scaled_rmse": 0.05338769040364598,
+        "max_abs_Rs_raw_per_h": 0.012678822589875537,
+        "max_abs_Rr_raw_per_h": 1.971636246156666e-07
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "rmse_Rs_raw_per_h": 0.0039197659800778014,
+        "rmse_Rr_raw_per_h": 2.627652825503685e-06,
+        "combined_raw_rmse_per_h": 0.0027716937279517965,
+        "combined_scaled_rmse": 0.06652064947084312,
+        "max_abs_Rs_raw_per_h": 0.03429161463625223,
+        "max_abs_Rr_raw_per_h": 4.636895462706467e-05
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "rmse_Rs_raw_per_h": 0.002440284628812694,
+        "rmse_Rr_raw_per_h": 5.0450093390690875e-06,
+        "combined_raw_rmse_per_h": 0.0017255454966095124,
+        "combined_scaled_rmse": 0.0414130919186283,
+        "max_abs_Rs_raw_per_h": 0.025603760363051002,
+        "max_abs_Rr_raw_per_h": 8.868620910801069e-05
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "rmse_Rs_raw_per_h": 0.0016256259772877441,
+        "rmse_Rr_raw_per_h": 7.885524796034291e-06,
+        "combined_raw_rmse_per_h": 0.0011495046758352142,
+        "combined_scaled_rmse": 0.027588112220045143,
+        "max_abs_Rs_raw_per_h": 0.017575704022466616,
+        "max_abs_Rr_raw_per_h": 0.00012324777587489053
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "rmse_Rs_raw_per_h": 0.0004849201880073353,
+        "rmse_Rr_raw_per_h": 1.1520644196244511e-07,
+        "combined_raw_rmse_per_h": 0.0003428903629511871,
+        "combined_scaled_rmse": 0.00822936871082849,
+        "max_abs_Rs_raw_per_h": 0.005274632319877098,
+        "max_abs_Rr_raw_per_h": 2.5993476305041513e-07
+      }
+    ],
+    "early_log_physics_records": [
+      {
+        "dose_ug_ml": 0.0,
+        "rmse_logRs": 0.01302623167627108,
+        "rmse_logRr": 0.027768104752174966,
+        "max_abs_logRs": 0.030674951506900743,
+        "max_abs_logRr": 0.08599407247123485
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "rmse_logRs": 0.0210266223412897,
+        "rmse_logRr": 0.034315505951050256,
+        "max_abs_logRs": 0.039979553929635356,
+        "max_abs_logRr": 0.09209597600229423
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "rmse_logRs": 0.020679484890205522,
+        "rmse_logRr": 0.034946405257741196,
+        "max_abs_logRs": 0.041973104660651364,
+        "max_abs_logRr": 0.06948097561573136
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "rmse_logRs": 0.03265000219183184,
+        "rmse_logRr": 0.030183140900192695,
+        "max_abs_logRs": 0.05947079472823154,
+        "max_abs_logRr": 0.0766361424324594
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "rmse_logRs": 0.08996422147928984,
+        "rmse_logRr": 0.014260492334466131,
+        "max_abs_logRs": 0.14901199780296198,
+        "max_abs_logRr": 0.02428085698274711
+      }
+    ],
+    "loss_balance_records": [
+      {
+        "total": 1.6827725078885076,
+        "load": 0.11602284593345409,
+        "fraction": 0.04865643968225367,
+        "physics": 0.0017821265222850513,
+        "physics_raw_rmse_per_h": 0.001758968350125971,
+        "physics_scaled_rmse": 0.0422152404030233,
+        "physics_log": 0.09388347353073315,
+        "regularization": 0.32587392468279486,
+        "weighted_load": 1.1602284593345409,
+        "weighted_fraction": 0.24328219841126836,
+        "weighted_physics": 0.04455316305712628,
+        "weighted_log_physics": 0.23470868382683285
+      }
+    ]
+  },
+  "main_analysis_status": {
+    "R3.7_full_reconstruction": true,
+    "R3.8_leave_one_dose_phenotype_out": true,
+    "R3.9_multidose_parameter_stability": true,
+    "R3.10_heldout_86h_distribution_validation": true
+  },
+  "supplementary_diagnostic_status": {
+    "S1_conditional_mu_cR_exact_ODE_geometry": false,
+    "11B_full_horizon_PINN_vs_ODE": true,
+    "11C_direct_exact_ODE_benchmark": false,
+    "11D_Hill_kill_exact_ODE": false,
+    "11E_free_dose_specific_kill": false,
+    "11F_delayed_resistant_growth": false,
+    "11G_population_level_rescue_heterogeneity": false,
+    "11H_all60_outerCV_rescue_mixture": false,
+    "11I_23h_landmark_outerCV": false
+  },
+  "model_form_audit": {
+    "full_horizon_PINN_ODE_audit_available": true,
+    "interpretation": "The real-data model is a hard-feasible, physics-regularized PINN. FINAL Diagnostic 11B showed that the learned PINN trajectory is not globally equivalent to the exact trajectory generated by its fitted mechanistic ODE at the intermediate treatment doses. Therefore the inferred inverse parameters should be treated as effective physics-regularized parameters rather than uniquely identified biological estimates.",
+    "PINN_weighted_data_objective": 1.3703036964339936,
+    "same_parameter_exact_ODE_weighted_data_objective": 17.58498212401659,
+    "exact_ODE_to_PINN_objective_ratio": 12.832908624401163,
+    "full_horizon_consistency_conclusion": "NOT satisfactory: exact fitted-ODE trajectory has a substantially worse matched data objective than the trained PINN.",
+    "dosewise_trajectory_consistency": [
+      {
+        "dose_ug_ml": 0.0,
+        "observed_horizon_h": 86.0,
+        "rmse_logS": 0.015438484696735394,
+        "max_abs_logS": 0.04386509771173941,
+        "rmse_logR": 0.012135738126583969,
+        "max_abs_logR": 0.02515047088489286,
+        "rmse_logB": 0.015437985003468357,
+        "max_abs_logB": 0.043864092610945704,
+        "rmse_qR": 1.175357577324096e-06,
+        "max_abs_qR": 2.4649635272320324e-06
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "observed_horizon_h": 48.0,
+        "rmse_logS": 2.9050598239380117,
+        "max_abs_logS": 4.411938363088385,
+        "rmse_logR": 0.25920572397374764,
+        "max_abs_logR": 1.0148350084749191,
+        "rmse_logB": 2.554002339898433,
+        "max_abs_logB": 4.161864889409329,
+        "rmse_qR": 0.4807319168215725,
+        "max_abs_qR": 0.797873972940555
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "observed_horizon_h": 48.0,
+        "rmse_logS": 2.5142369359506165,
+        "max_abs_logS": 3.588594796547521,
+        "rmse_logR": 0.06014188405434972,
+        "max_abs_logR": 0.1201116381355316,
+        "rmse_logB": 2.0567519164483636,
+        "max_abs_logB": 3.224937295010437,
+        "rmse_qR": 0.5423911625538294,
+        "max_abs_qR": 0.9028080749195806
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "observed_horizon_h": 48.0,
+        "rmse_logS": 2.1999661974357365,
+        "max_abs_logS": 3.1132874114160476,
+        "rmse_logR": 0.12093721569933992,
+        "max_abs_logR": 0.27792776292327126,
+        "rmse_logB": 1.5541333506471218,
+        "max_abs_logB": 2.7665573233355136,
+        "rmse_qR": 0.596630243930717,
+        "max_abs_qR": 0.9572510813082271
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "observed_horizon_h": 48.0,
+        "rmse_logS": 0.03607711919833232,
+        "max_abs_logS": 0.053040474187287856,
+        "rmse_logR": 0.032241185379701304,
+        "max_abs_logR": 0.06250662682140629,
+        "rmse_logB": 0.029008089971393796,
+        "max_abs_logB": 0.05916760687092726,
+        "rmse_qR": 0.0032396026782866823,
+        "max_abs_qR": 0.011190691952266518
+      }
+    ],
+    "PINN_vs_exact_ODE_data_fit": [
+      {
+        "dose_ug_ml": 0.0,
+        "PINN_RMSE_logB": 0.16741342161570724,
+        "ODE_RMSE_logB": 0.19040041715595576,
+        "PINN_RMSE_qR": 1.6318419952925508e-05,
+        "ODE_RMSE_qR": 1.863270798058217e-05
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "PINN_RMSE_logB": 0.409047812717974,
+        "ODE_RMSE_logB": 2.189527339360282,
+        "PINN_RMSE_qR": 0.4446952252335581,
+        "ODE_RMSE_qR": 0.6975235637746232
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "PINN_RMSE_logB": 0.2233707214685419,
+        "ODE_RMSE_logB": 1.3603870396998,
+        "PINN_RMSE_qR": 0.12378442391562385,
+        "ODE_RMSE_qR": 0.9144232019208788
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "PINN_RMSE_logB": 0.4578503376657105,
+        "ODE_RMSE_logB": 0.9612318241922703,
+        "PINN_RMSE_qR": 0.15545933129350128,
+        "ODE_RMSE_qR": 0.9131156800720659
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "PINN_RMSE_logB": 0.32746048926965715,
+        "ODE_RMSE_logB": 0.3238995846073486,
+        "PINN_RMSE_qR": 0.09413482880181609,
+        "ODE_RMSE_qR": 0.09416724409958074
+      }
+    ]
+  },
+  "endpoint_validation": {
+    "available": true,
+    "endpoint_source": "data\\real\\Ramsayer_qR_86h_ENDPOINT_unpaired.csv",
+    "comparison_level": "dose-wise unpaired distribution",
+    "treated_86h_used_for_fitting": false,
+    "forecast_definition": "Exact mechanistic ODE propagation from the exact observed 48-h state using biological parameters inferred by FINAL FULL_RESULT.",
+    "important_scope_note": "Because the treated 86-h data are unpaired, Cell 12 evaluates dose-level endpoint distributions and does not report individual 48-to-86 h replicate prediction errors.",
+    "model_comparison_records": [
+      {
+        "variable": "log10_B86",
+        "mean_Wasserstein_mechanistic": 3.5950553050049137,
+        "mean_Wasserstein_persistence": 3.9990881654761905,
+        "delta_Wasserstein_mechanistic_minus_persistence": -0.40403286047127684,
+        "mean_quantile_RMSE_mechanistic": 3.744827855492427,
+        "mean_quantile_RMSE_persistence": 4.161286277338266
+      },
+      {
+        "variable": "qR86",
+        "mean_Wasserstein_mechanistic": 0.1583826573964936,
+        "mean_Wasserstein_persistence": 0.14638894334583333,
+        "delta_Wasserstein_mechanistic_minus_persistence": 0.01199371405066027,
+        "mean_quantile_RMSE_mechanistic": 0.2017668131936362,
+        "mean_quantile_RMSE_persistence": 0.1870396102777785
+      }
+    ],
+    "dosewise_endpoint_summary": [
+      {
+        "dose_ug_ml": 30.0,
+        "n_48h_forecast_states": 6,
+        "n_86h_unpaired_observations": 6,
+        "forecast_mean_log10_B86": 4.954461474495662,
+        "forecast_sd_log10_B86": 0.8657358487491471,
+        "observed_mean_log10_B86": 8.583573733333333,
+        "observed_sd_log10_B86": 2.2715855814947608,
+        "forecast_mean_qR86": 0.6378144177542978,
+        "forecast_sd_qR86": 0.4320505540037416,
+        "observed_mean_qR86": 0.9153202158,
+        "observed_sd_qR86": 0.06824079393758663
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "n_48h_forecast_states": 7,
+        "n_86h_unpaired_observations": 7,
+        "forecast_mean_log10_B86": 6.082849027202476,
+        "forecast_sd_log10_B86": 0.34871280902713214,
+        "observed_mean_log10_B86": 9.540908585714286,
+        "observed_sd_log10_B86": 0.077511752540554,
+        "forecast_mean_qR86": 0.9955884429826646,
+        "forecast_sd_qR86": 0.0066709634073511105,
+        "observed_mean_qR86": 0.8420949226000001,
+        "observed_sd_qR86": 0.09390018754384113
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "n_48h_forecast_states": 7,
+        "n_86h_unpaired_observations": 7,
+        "forecast_mean_log10_B86": 6.258205396493483,
+        "forecast_sd_log10_B86": 0.8944256252684221,
+        "observed_mean_log10_B86": 9.437492614285715,
+        "observed_sd_log10_B86": 0.08193939569475368,
+        "forecast_mean_qR86": 0.9993981425672714,
+        "forecast_sd_qR86": 0.0013768525454711125,
+        "observed_mean_qR86": 0.9062148808857143,
+        "observed_sd_qR86": 0.09813030335706964
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "n_48h_forecast_states": 6,
+        "n_86h_unpaired_observations": 6,
+        "forecast_mean_log10_B86": 5.4631412651220606,
+        "forecast_sd_log10_B86": 0.533679219809687,
+        "observed_mean_log10_B86": 9.576903450000001,
+        "observed_sd_log10_B86": 0.26806766906003965,
+        "forecast_mean_qR86": 0.9999999798864195,
+        "forecast_sd_qR86": 2.6105339961445817e-08,
+        "observed_mean_qR86": 0.9157669507833334,
+        "observed_sd_qR86": 0.14157722917557386
+      }
+    ],
+    "dosewise_distribution_metrics": [
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "log10_B86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 4.954461474495662,
+        "predicted_sd": 0.8657358487491471,
+        "observed_mean": 8.583573733333333,
+        "observed_sd": 2.2715855814947608,
+        "abs_error_in_mean": 3.6291122588376714,
+        "wasserstein_distance": 3.6291122588376723,
+        "quantile_rmse": 4.125242083805882
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 4.521690133333333,
+        "predicted_sd": 0.7848762910864557,
+        "observed_mean": 8.583573733333333,
+        "observed_sd": 2.2715855814947608,
+        "abs_error_in_mean": 4.0618836,
+        "wasserstein_distance": 4.0618836,
+        "quantile_rmse": 4.61921080856576
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "qR86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.6378144177542978,
+        "predicted_sd": 0.4320505540037416,
+        "observed_mean": 0.9153202158,
+        "observed_sd": 0.06824079393758663,
+        "abs_error_in_mean": 0.2775057980457022,
+        "wasserstein_distance": 0.3026208184186664,
+        "quantile_rmse": 0.39314152795929647
+      },
+      {
+        "dose_ug_ml": 30.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.5449817850666666,
+        "predicted_sd": 0.47734647365785904,
+        "observed_mean": 0.9153202158,
+        "observed_sd": 0.06824079393758663,
+        "abs_error_in_mean": 0.3703384307333334,
+        "wasserstein_distance": 0.3752403915333333,
+        "quantile_rmse": 0.5041303996812976
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "log10_B86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 6.082849027202476,
+        "predicted_sd": 0.34871280902713214,
+        "observed_mean": 9.540908585714286,
+        "observed_sd": 0.077511752540554,
+        "abs_error_in_mean": 3.4580595585118097,
+        "wasserstein_distance": 3.4580595585118106,
+        "quantile_rmse": 3.471920229360193
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 5.524082457142858,
+        "predicted_sd": 0.3681518053671468,
+        "observed_mean": 9.540908585714286,
+        "observed_sd": 0.077511752540554,
+        "abs_error_in_mean": 4.016826128571428,
+        "wasserstein_distance": 4.016826128571429,
+        "quantile_rmse": 4.034244356933406
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "qR86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9955884429826646,
+        "predicted_sd": 0.0066709634073511105,
+        "observed_mean": 0.8420949226000001,
+        "observed_sd": 0.09390018754384113,
+        "abs_error_in_mean": 0.1534935203826645,
+        "wasserstein_distance": 0.1534935203826646,
+        "quantile_rmse": 0.16641407838569744
+      },
+      {
+        "dose_ug_ml": 40.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9085136439714285,
+        "predicted_sd": 0.1336576696854896,
+        "observed_mean": 0.8420949226000001,
+        "observed_sd": 0.09390018754384113,
+        "abs_error_in_mean": 0.06641872137142846,
+        "wasserstein_distance": 0.08864094360000002,
+        "quantile_rmse": 0.10393896705056588
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "log10_B86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 6.258205396493483,
+        "predicted_sd": 0.8944256252684221,
+        "observed_mean": 9.437492614285715,
+        "observed_sd": 0.08193939569475368,
+        "abs_error_in_mean": 3.179287217792232,
+        "wasserstein_distance": 3.179287217792232,
+        "quantile_rmse": 3.28925193858469
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 5.770644814285714,
+        "predicted_sd": 0.8630764890002034,
+        "observed_mean": 9.437492614285715,
+        "observed_sd": 0.08193939569475368,
+        "abs_error_in_mean": 3.6668478,
+        "wasserstein_distance": 3.6668478,
+        "quantile_rmse": 3.758258771705099
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "qR86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9993981425672714,
+        "predicted_sd": 0.0013768525454711125,
+        "observed_mean": 0.9062148808857143,
+        "observed_sd": 0.09813030335706964,
+        "abs_error_in_mean": 0.0931832616815571,
+        "wasserstein_distance": 0.09318326168155724,
+        "quantile_rmse": 0.12556082459995785
+      },
+      {
+        "dose_ug_ml": 50.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 7,
+        "n_observed": 7,
+        "predicted_mean": 0.9259566963714285,
+        "predicted_sd": 0.15683010978582915,
+        "observed_mean": 0.9062148808857143,
+        "observed_sd": 0.09813030335706964,
+        "abs_error_in_mean": 0.019741815485714187,
+        "wasserstein_distance": 0.08199702060000001,
+        "quantile_rmse": 0.09017830336965263
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "log10_B86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 5.4631412651220606,
+        "predicted_sd": 0.533679219809687,
+        "observed_mean": 9.576903450000001,
+        "observed_sd": 0.26806766906003965,
+        "abs_error_in_mean": 4.113762184877941,
+        "wasserstein_distance": 4.11376218487794,
+        "quantile_rmse": 4.092897170218943
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "log10_B86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 5.326108316666667,
+        "predicted_sd": 0.560585773163959,
+        "observed_mean": 9.576903450000001,
+        "observed_sd": 0.26806766906003965,
+        "abs_error_in_mean": 4.250795133333335,
+        "wasserstein_distance": 4.250795133333333,
+        "quantile_rmse": 4.233431172148799
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "qR86",
+        "model": "mechanistic_48_to_86_forecast",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.9999999798864195,
+        "predicted_sd": 2.6105339961445817e-08,
+        "observed_mean": 0.9157669507833334,
+        "observed_sd": 0.14157722917557386,
+        "abs_error_in_mean": 0.08423302910308617,
+        "wasserstein_distance": 0.08423302910308618,
+        "quantile_rmse": 0.12195082182959309
+      },
+      {
+        "dose_ug_ml": 100.0,
+        "variable": "qR86",
+        "model": "48h_persistence_baseline",
+        "n_predicted": 6,
+        "n_observed": 6,
+        "predicted_mean": 0.9380893413333334,
+        "predicted_sd": 0.07792813255480174,
+        "observed_mean": 0.9157669507833334,
+        "observed_sd": 0.14157722917557386,
+        "abs_error_in_mean": 0.02232239055000007,
+        "wasserstein_distance": 0.03967741764999998,
+        "quantile_rmse": 0.04991077100959787
+      }
+    ]
+  },
+  "dataset_paths": {
+    "primary": "data\\real\\Ramsayer_PRIMARY_PINN_data.csv",
+    "q48_exact_linked": "data\\real\\Ramsayer_qR_48h_EXACT_linked.csv",
+    "q86_external_endpoint": "data\\real\\Ramsayer_qR_86h_ENDPOINT_unpaired.csv",
+    "primary_exists": true,
+    "q48_exists": true,
+    "q86_exists": true
+  }
+}

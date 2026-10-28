@@ -1,0 +1,5 @@
+schedule,regime,noise_level,total_points,fraction_points,total_train,total_validation,fraction_train,fraction_validation
+early_continuous,O1,0.0,21,0,17,4,0,0
+early_continuous,O2,0.0,21,1,17,4,1,0
+early_continuous,O3,0.0,21,3,17,4,2,1
+early_continuous,O4,0.0,21,21,17,4,20,1

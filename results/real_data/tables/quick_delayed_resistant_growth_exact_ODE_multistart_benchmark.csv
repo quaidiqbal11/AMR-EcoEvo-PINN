@@ -1,0 +1,6 @@
+model,weighted_data_objective,relative_to_PINN
+Current trained PINN,1.4506167623832744,1.0
+Best original exact ODE,4.337720120630017,2.9902592008542688
+Best Hill-kill exact ODE,2.6246672471837194,1.809345731584924
+Best free dose-specific-kill exact ODE,2.452884361813622,1.6909251467518431
+Best delayed-resistant-growth exact ODE,2.4517682703338783,1.6901557557530036

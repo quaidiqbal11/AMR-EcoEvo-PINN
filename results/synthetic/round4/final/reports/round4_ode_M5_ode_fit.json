@@ -1,0 +1,11 @@
+{
+  "label": "round4_ode_M5",
+  "model_kind": "ode_fit",
+  "mutation_probability": 9.99999979537809e-05,
+  "resistance_fitness_cost": 0.09999999738500373,
+  "objective": 1.9841082780505993e-16,
+  "nfev": 7,
+  "training_seconds": 140.22461867332458,
+  "relative_error_mu": 2.0462191104931096e-08,
+  "relative_error_cost": 2.6149962750743327e-08
+}

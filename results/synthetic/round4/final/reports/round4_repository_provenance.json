@@ -1,0 +1,86 @@
+{
+  "repositories": {
+    "DrugRes_StructPop": {
+      "used": [
+        "sensitive/resistant birth, death, mutation, and crowding structure",
+        "piecewise treatment changes applied exactly at switch times",
+        "evolutionary-rescue interpretation and later stochastic validation"
+      ],
+      "not_claimed_as_novel": "The AMR population process and Gillespie method.",
+      "round4_role": "Supplies the deterministic mean-field biology and motivates schedule-specific treatment interfaces."
+    },
+    "BINNs": {
+      "used": [
+        "inverse biological learning from sparse observations",
+        "separation of observation loss and mechanistic residual loss",
+        "explicit normalization and held-out validation"
+      ],
+      "not_claimed_as_novel": "Sparse biological inverse learning.",
+      "round4_role": "Motivates joint inference from total burden and sparse phenotype fractions."
+    },
+    "PINN-Proj": {
+      "used": [
+        "hard constraints implemented through differentiable output mappings",
+        "separate predictive and feasibility audits",
+        "first-order optimization followed by optional L-BFGS refinement"
+      ],
+      "not_claimed_as_novel": "Projection-based exact conservation in PINNs.",
+      "round4_role": "Motivates exact feasibility and controlled comparisons, but no integral projection is copied into the AMR state mapping."
+    },
+    "Control-PINNs": {
+      "used": [
+        "treatment represented explicitly as an input to the dynamics",
+        "one model containing multiple logically coupled components"
+      ],
+      "excluded": [
+        "adjoint equations",
+        "stationarity residuals",
+        "learned or optimized treatment controls"
+      ],
+      "round4_role": "Clarifies that Round 4 is multi-environment inverse inference, not antibiotic optimal control."
+    },
+    "evo_dm": {
+      "used": [
+        "schedule/environment diversity as evolutionary excitation",
+        "fitness-cost interpretation across drug environments"
+      ],
+      "excluded": [
+        "DQN training",
+        "MDP policy optimization",
+        "genotype-level policy claims"
+      ],
+      "round4_role": "Motivates heterogeneous prescribed schedules as complementary experiments without importing the RL architecture."
+    },
+    "KKT_hPINN": {
+      "used": [
+        "training through an exact differentiable feasibility layer",
+        "hard versus soft constraint reasoning",
+        "independent reporting of feasibility residuals"
+      ],
+      "not_claimed_as_novel": "KKT projection for affine equality constraints.",
+      "round4_role": "Motivates exact enforcement, while the AMR inequalities and simplex/capacity structure require a different nonlinear mapping."
+    }
+  },
+  "hypotheses": {
+    "H1": "Joint inference across heterogeneous schedules increases the weakest parameter-sensitivity direction relative to early treatment alone.",
+    "H2": "Shared-parameter multi-schedule fitting reduces relative error in mu and c_R across paired seeds.",
+    "H3": "The hard output mapping preserves S>=0, R>=0, and S+R<=K for every schedule, design, seed, and dense evaluation point.",
+    "H4": "Leave-one-schedule-out and parameter-transfer tests reveal which treatment environments contribute complementary information."
+  },
+  "novelty_boundary": {
+    "proposed_round4_contribution": [
+      "shared eco-evolutionary parameter inference across prescribed treatment schedules",
+      "schedule-specific interface networks with one shared bounded parameter module",
+      "paired-seed comparison of nested schedule designs",
+      "sensitivity-SVD, profile geometry, leave-one-out, and transfer analyses",
+      "exact pointwise positivity, phenotype simplex, capacity, initial state, and interface continuity"
+    ],
+    "not_claimed": [
+      "first PINN",
+      "first AMR model",
+      "first hard-constrained neural network",
+      "first multi-task neural network",
+      "first antibiotic RL or optimal-control method"
+    ]
+  }
+}

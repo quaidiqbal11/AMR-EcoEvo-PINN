@@ -1,0 +1,105 @@
+{
+  "run_label": "quick",
+  "quick_mode": true,
+  "device": "cuda",
+  "torch_version": "2.7.1+cu118",
+  "numpy_version": "2.4.0",
+  "pandas_version": "2.3.3",
+  "scipy_version": "1.16.3",
+  "normalization": {
+    "K_REAL": 11180001253.8321,
+    "capacity_margin": 1.3,
+    "scope_note": "K_REAL in the primary PINN analysis is computed before the grouped train/validation split; validation is therefore internal grouped validation rather than a completely untouched external test."
+  },
+  "architecture": {
+    "network_width": 64,
+    "network_depth": 4,
+    "pretrain_epochs": 250,
+    "physics_warmup_epochs": 250,
+    "adam_epochs": 1200,
+    "lbfgs_max_iter": 60,
+    "collocation_points_per_dose": 192
+  },
+  "full_model_parameters": {
+    "mutation_probability": 8.974979060002035e-07,
+    "resistance_fitness_cost": 0.09803085034842417,
+    "sensitive_birth_rate_per_h": 0.4807652660788334,
+    "death_rate_per_h": 0.35997290031135354,
+    "initial_resistant_fraction_shared": 5.0519080984788356e-06,
+    "q0_dose_0": 5.0519080984788356e-06,
+    "q0_dose_30": 5.0519080984788356e-06,
+    "q0_dose_40": 5.0519080984788356e-06,
+    "q0_dose_50": 5.0519080984788356e-06,
+    "q0_dose_100": 5.0519080984788356e-06
+  },
+  "train_metrics": {
+    "rmse_logB": 0.3283030853488764,
+    "mae_logB": 0.22731074397312587,
+    "r2_logB": 0.9630899838541115,
+    "rmse_qR": 0.19683698004495456,
+    "mae_qR": 0.11915834624256588
+  },
+  "validation_metrics": {
+    "rmse_logB": 0.3088295816522309,
+    "mae_logB": 0.19630255482567405,
+    "r2_logB": 0.9678303848070737,
+    "rmse_qR": 0.2032367939127019,
+    "mae_qR": 0.13847119028836927
+  },
+  "feasibility": {
+    "max_negative_violation": 0.0,
+    "max_capacity_violation": 0.0
+  },
+  "main_analysis_status": {
+    "R3.7_full_reconstruction": true,
+    "R3.8_leave_one_dose_phenotype_out": true,
+    "R3.9_multidose_parameter_stability": true,
+    "R3.10_heldout_86h_distribution_validation": true
+  },
+  "supplementary_diagnostic_status": {
+    "S1_conditional_mu_cR_exact_ODE_geometry": true,
+    "11B_full_horizon_PINN_vs_ODE": true,
+    "11C_direct_exact_ODE_benchmark": true,
+    "11D_Hill_kill_exact_ODE": true,
+    "11E_free_dose_specific_kill": true,
+    "11F_delayed_resistant_growth": true,
+    "11G_population_level_rescue_heterogeneity": true,
+    "11H_all60_outerCV_rescue_mixture": true,
+    "11I_23h_landmark_outerCV": true
+  },
+  "model_form_audit": {
+    "full_horizon_PINN_ODE_audit_available": true,
+    "interpretation": "Hard-feasible, physics-regularized PINN. Do not interpret inverse parameters as uniquely identified mechanistic estimates unless full-horizon PINN-versus-exact-ODE consistency is satisfactory.",
+    "PINN_weighted_data_objective": 1.4506167623832744,
+    "same_parameter_exact_ODE_weighted_data_objective": 15.316062551036808
+  },
+  "endpoint_validation": {
+    "available": true,
+    "endpoint_source": "data\\real\\Ramsayer_qR_86h_ENDPOINT_unpaired_RECOVERED.csv",
+    "comparison_level": "dose-wise unpaired distribution",
+    "treated_86h_used_for_fitting": false,
+    "model_comparison_records": [
+      {
+        "variable": "log10_B86",
+        "mean_Wasserstein_mechanistic": 3.3269651712162407,
+        "mean_Wasserstein_persistence": 3.9990881654761905,
+        "delta_Wasserstein_mechanistic_minus_persistence": -0.6721229942599498,
+        "mean_quantile_RMSE_mechanistic": 3.4586133487241377,
+        "mean_quantile_RMSE_persistence": 4.161286277338266
+      },
+      {
+        "variable": "qR86",
+        "mean_Wasserstein_mechanistic": 0.13111093001741714,
+        "mean_Wasserstein_persistence": 0.14638894334583333,
+        "delta_Wasserstein_mechanistic_minus_persistence": -0.01527801332841619,
+        "mean_quantile_RMSE_mechanistic": 0.1690544528363366,
+        "mean_quantile_RMSE_persistence": 0.1870396102777785
+      }
+    ]
+  },
+  "dataset_paths": {
+    "primary": "data\\real\\Ramsayer_PRIMARY_PINN_data.csv",
+    "q48_exact_linked": "data\\real\\Ramsayer_qR_48h_EXACT_linked.csv",
+    "q86_external_endpoint": "data\\real\\Ramsayer_qR_86h_ENDPOINT_unpaired.csv"
+  }
+}

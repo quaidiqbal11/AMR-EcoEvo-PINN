@@ -1,0 +1,15 @@
+parameter,normalized_bound_position,near_lower_bound,near_upper_bound
+log10_mu,0.062054140724233695,False,False
+cR,1.9817983058440654e-14,True,False
+log10_rS,0.8598375914820839,False,False
+log10_d0,0.8530095375242721,False,False
+log10_q0,0.6374896513522641,False,False
+log10_k30,0.8027283174412236,False,False
+log10_k40,0.7903493018208749,False,False
+log10_k50,0.7888536871564009,False,False
+log10_k100,0.7899459540242908,False,False
+rhoR,0.9131312813820431,False,False
+tauK,0.4325444784244935,False,False
+log10_gammaK,0.3953752716406185,False,False
+tauR,0.20368678359751963,False,False
+log10_gammaR,0.989477239101404,False,False

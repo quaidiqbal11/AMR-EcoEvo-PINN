@@ -1,0 +1,4 @@
+time,resistant_fraction,antibiotic,schedule
+7.0,0.0003450531777431509,1.0,pulsed
+12.0,0.000500387544654164,1.0,pulsed
+18.0,0.0008863040643254426,0.0,pulsed

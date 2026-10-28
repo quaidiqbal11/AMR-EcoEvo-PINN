@@ -1,0 +1,2 @@
+n_doses,mean_abs_error_across_doses,median_abs_error_across_doses,mean_rmse_to_individual_observations,mean_shift_from_full_fit_qR
+4,0.0241625984025673,0.01895721576379315,0.20006750967534814,0.026294274739261998

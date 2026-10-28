@@ -1,0 +1,4 @@
+time,resistant_fraction,antibiotic,schedule,resistant_fraction_observed
+7.0,0.0003450531777425211,1.0,early_continuous,0.0003570438968062537
+12.0,0.0022838528299549657,1.0,early_continuous,0.002184721420881426
+18.0,0.06054062488324336,1.0,early_continuous,0.055524196790861256

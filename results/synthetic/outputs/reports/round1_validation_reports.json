@@ -1,0 +1,86 @@
+{
+  "parameters": {
+    "carrying_capacity": 1000.0,
+    "sensitive_birth_rate": 1.0,
+    "resistance_fitness_cost": 0.1,
+    "sensitive_death_rate": 0.1,
+    "resistant_death_rate": 0.1,
+    "mutation_probability": 0.0001,
+    "sensitive_drug_effect": 1.0,
+    "resistant_drug_effect": 0.1,
+    "resistant_birth_rate": 0.9
+  },
+  "simulation": {
+    "initial_sensitive": 100.0,
+    "initial_resistant": 0.0,
+    "start_time": 0.0,
+    "final_time": 20.0,
+    "dense_points": 1001,
+    "sparse_total_points": 21,
+    "relative_tolerance": 1e-09,
+    "absolute_tolerance": 1e-11,
+    "solver_method": "DOP853"
+  },
+  "validation": {
+    "untreated": {
+      "finite_values": true,
+      "minimum_sensitive": 100.0,
+      "minimum_resistant": 0.0,
+      "maximum_total": 899.9965367572419,
+      "minimum_resistant_fraction": 0.0,
+      "maximum_resistant_fraction": 0.00034272502806658513,
+      "initial_sensitive_error": 0.0,
+      "initial_resistant_error": 0.0,
+      "nonnegative_populations": true,
+      "capacity_respected": true,
+      "fraction_in_unit_interval": true,
+      "initial_conditions_respected": true,
+      "all_checks_passed": true
+    },
+    "early_continuous": {
+      "finite_values": true,
+      "minimum_sensitive": 100.0,
+      "minimum_resistant": 0.0,
+      "maximum_total": 826.5366947332562,
+      "minimum_resistant_fraction": 0.0,
+      "maximum_resistant_fraction": 0.18330380688678238,
+      "initial_sensitive_error": 0.0,
+      "initial_resistant_error": 0.0,
+      "nonnegative_populations": true,
+      "capacity_respected": true,
+      "fraction_in_unit_interval": true,
+      "initial_conditions_respected": true,
+      "all_checks_passed": true
+    },
+    "late_continuous": {
+      "finite_values": true,
+      "minimum_sensitive": 100.0,
+      "minimum_resistant": 0.0,
+      "maximum_total": 899.1094991494575,
+      "minimum_resistant_fraction": 0.0,
+      "maximum_resistant_fraction": 0.00890159762951791,
+      "initial_sensitive_error": 0.0,
+      "initial_resistant_error": 0.0,
+      "nonnegative_populations": true,
+      "capacity_respected": true,
+      "fraction_in_unit_interval": true,
+      "initial_conditions_respected": true,
+      "all_checks_passed": true
+    },
+    "pulsed": {
+      "finite_values": true,
+      "minimum_sensitive": 100.0,
+      "minimum_resistant": 0.0,
+      "maximum_total": 896.3385808474529,
+      "minimum_resistant_fraction": 0.0,
+      "maximum_resistant_fraction": 0.0008887792418986053,
+      "initial_sensitive_error": 0.0,
+      "initial_resistant_error": 0.0,
+      "nonnegative_populations": true,
+      "capacity_respected": true,
+      "fraction_in_unit_interval": true,
+      "initial_conditions_respected": true,
+      "all_checks_passed": true
+    }
+  }
+}

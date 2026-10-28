@@ -1,0 +1,200 @@
+{
+  "round": 4,
+  "quick_mode": false,
+  "run_label": "final",
+  "project_root": "results\\synthetic",
+  "output_root": "results\\synthetic\\round4\\final",
+  "python": "3.13.11",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seed": 20260806,
+  "device": "cuda",
+  "dtype": "torch.float64",
+  "training_budgets": {
+    "pretrain_epochs": 1500,
+    "physics_warmup_epochs": 1000,
+    "adam_epochs": 9000,
+    "lbfgs_max_iter": 300,
+    "collocation_points_per_interval": 768,
+    "validation_points_per_interval": 128,
+    "lbfgs_points_per_interval": 256,
+    "early_stopping_patience": 1800,
+    "log_every": 100,
+    "resample_every": 20
+  },
+  "network": {
+    "width": 64,
+    "depth": 4,
+    "state_learning_rate": 0.0008,
+    "parameter_learning_rate": 0.002,
+    "gradient_clip_norm": 10.0
+  },
+  "primary_seed_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "primary_designs": {
+    "M1": {
+      "design_id": "M1",
+      "schedule_names": [
+        "early_continuous"
+      ],
+      "observation_regime": "O3",
+      "description": "Single early-treatment schedule with three phenotype measurements."
+    },
+    "M2": {
+      "design_id": "M2",
+      "schedule_names": [
+        "early_continuous",
+        "late_continuous"
+      ],
+      "observation_regime": "O3",
+      "description": "Early and late continuous schedules with shared parameters."
+    },
+    "M3": {
+      "design_id": "M3",
+      "schedule_names": [
+        "early_continuous",
+        "late_continuous",
+        "pulsed"
+      ],
+      "observation_regime": "O3",
+      "description": "Three treated environments with shared parameters."
+    },
+    "M4": {
+      "design_id": "M4",
+      "schedule_names": [
+        "untreated",
+        "early_continuous",
+        "late_continuous",
+        "pulsed"
+      ],
+      "observation_regime": "O3",
+      "description": "Untreated plus three treatment schedules with sparse phenotype data."
+    },
+    "M5": {
+      "design_id": "M5",
+      "schedule_names": [
+        "untreated",
+        "early_continuous",
+        "late_continuous",
+        "pulsed"
+      ],
+      "observation_regime": "O4",
+      "description": "Four-schedule fully phenotype-resolved upper-information benchmark."
+    }
+  },
+  "initial_experiment_switches": {
+    "structural_smoke_test": false,
+    "single_design_demo": false,
+    "primary_multi_schedule_study": false,
+    "matched_ode_baselines": false,
+    "identifiability_geometry": false,
+    "leave_one_schedule_out": false,
+    "profile_surfaces": true,
+    "parameter_transfer_test": false,
+    "plotting_only": false
+  },
+  "runtime_switches_at_final_audit": {
+    "structural_smoke_test": false,
+    "single_design_demo": false,
+    "primary_multi_schedule_study": false,
+    "matched_ode_baselines": false,
+    "identifiability_geometry": false,
+    "leave_one_schedule_out": false,
+    "profile_surfaces": false,
+    "parameter_transfer_test": true,
+    "plotting_only": false
+  },
+  "repository_provenance": {
+    "DrugRes_StructPop": {
+      "used": [
+        "sensitive/resistant birth, death, mutation, and crowding structure",
+        "piecewise treatment changes applied exactly at switch times",
+        "evolutionary-rescue interpretation and later stochastic validation"
+      ],
+      "not_claimed_as_novel": "The AMR population process and Gillespie method.",
+      "round4_role": "Supplies the deterministic mean-field biology and motivates schedule-specific treatment interfaces."
+    },
+    "BINNs": {
+      "used": [
+        "inverse biological learning from sparse observations",
+        "separation of observation loss and mechanistic residual loss",
+        "explicit normalization and held-out validation"
+      ],
+      "not_claimed_as_novel": "Sparse biological inverse learning.",
+      "round4_role": "Motivates joint inference from total burden and sparse phenotype fractions."
+    },
+    "PINN-Proj": {
+      "used": [
+        "hard constraints implemented through differentiable output mappings",
+        "separate predictive and feasibility audits",
+        "first-order optimization followed by optional L-BFGS refinement"
+      ],
+      "not_claimed_as_novel": "Projection-based exact conservation in PINNs.",
+      "round4_role": "Motivates exact feasibility and controlled comparisons, but no integral projection is copied into the AMR state mapping."
+    },
+    "Control-PINNs": {
+      "used": [
+        "treatment represented explicitly as an input to the dynamics",
+        "one model containing multiple logically coupled components"
+      ],
+      "excluded": [
+        "adjoint equations",
+        "stationarity residuals",
+        "learned or optimized treatment controls"
+      ],
+      "round4_role": "Clarifies that Round 4 is multi-environment inverse inference, not antibiotic optimal control."
+    },
+    "evo_dm": {
+      "used": [
+        "schedule/environment diversity as evolutionary excitation",
+        "fitness-cost interpretation across drug environments"
+      ],
+      "excluded": [
+        "DQN training",
+        "MDP policy optimization",
+        "genotype-level policy claims"
+      ],
+      "round4_role": "Motivates heterogeneous prescribed schedules as complementary experiments without importing the RL architecture."
+    },
+    "KKT_hPINN": {
+      "used": [
+        "training through an exact differentiable feasibility layer",
+        "hard versus soft constraint reasoning",
+        "independent reporting of feasibility residuals"
+      ],
+      "not_claimed_as_novel": "KKT projection for affine equality constraints.",
+      "round4_role": "Motivates exact enforcement, while the AMR inequalities and simplex/capacity structure require a different nonlinear mapping."
+    }
+  },
+  "primary_prediction_completeness": {
+    "expected_primary_runs": 25,
+    "found_primary_prediction_sets": 25,
+    "missing_prediction_sets": 0,
+    "missing_labels": [],
+    "complete": true
+  },
+  "hard_constraint_audit": {
+    "carrying_capacity": 1000.0,
+    "constraint_tolerance_normalized": 1e-08,
+    "initial_condition_tolerance_normalized": 1e-08,
+    "audited_trajectory_records": 70,
+    "passed_trajectory_records": 70,
+    "failed_trajectory_records": 0,
+    "initial_conditions_checked": 70,
+    "all_constraints_passed": true,
+    "constraint_table": "results\\synthetic\\round4\\final\\tables\\round4_constraint_audit.csv"
+  },
+  "file_counts": {
+    "model_files": 40,
+    "prediction_files": 158,
+    "history_files": 40,
+    "figure_files": 69,
+    "table_files": 64,
+    "report_files": 8,
+    "total_files": 379
+  }
+}

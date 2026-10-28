@@ -1,0 +1,10 @@
+quantity,value
+Trained PINN mu,8.974979060002035e-07
+Conditional-grid minimizing mu,5.6628289544642224e-05
+Trained PINN cR,0.09803085034842417
+Conditional-grid minimizing cR,0.03480308503484242
+Conditional objective at trained pair,15.316062550879959
+Minimum conditional grid objective,14.814760054912806
+Objective ratio trained/minimum,1.0338380435531194
+Total-load MSE at trained pair,1.3134673510650674
+Fraction MSE at trained pair,0.4362778080458569

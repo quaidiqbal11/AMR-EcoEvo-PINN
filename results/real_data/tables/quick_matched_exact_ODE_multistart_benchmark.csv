@@ -1,0 +1,4 @@
+model,weighted_data_objective,objective_relative_to_PINN
+Trained PINN trajectory,1.4506167623832744,1.0
+Exact ODE at PINN-inferred parameters,15.316062554065352,10.558310748389534
+Best multi-start exact ODE,4.337720120630017,2.9902592008542688

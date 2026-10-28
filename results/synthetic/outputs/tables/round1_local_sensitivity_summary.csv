@@ -1,0 +1,3 @@
+parameter,mean_absolute_sensitivity,maximum_absolute_sensitivity,l2_sensitivity_norm
+mutation_probability,0.47224508984164226,0.9998635927407904,4.35654745632646
+resistance_fitness_cost,0.1747713122597769,0.708546963116567,1.8767037366978807

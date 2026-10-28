@@ -1,0 +1,17 @@
+item,passed
+R3.7_full_11FR_inverse_fit,True
+P1_state_only_pointwise_refinement,True
+P2_state_only_integral_refinement,True
+R3.8_leave_one_dose_qR,True
+R3.9_nested_treatment_diversity,True
+R3.10_independent_86h_unpaired_validation,True
+P2_inverse_parameter_freeze,True
+hard_nonnegativity,True
+hard_capacity,True
+physics_fidelity_recomputed,True
+early_log_physics_recomputed,True
+loss_balance_recomputed,True
+full_0_48h_PINN_exact_ODE_consistency_recomputed,True
+R3.8_exact_12_fold_audit,True
+R3.9_exact_25_run_audit,True
+R3.10_output_schema_verified,True

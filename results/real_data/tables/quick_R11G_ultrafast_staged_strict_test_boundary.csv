@@ -1,0 +1,13 @@
+parameter,normalized_bound_position,near_lower_bound,near_upper_bound
+log10_mu,0.026290215469953183,False,False
+cR,0.96756052283135,False,False
+log10_rS,0.2880737667759388,False,False
+log10_d0,0.18566443925745124,False,False
+log10_q0,0.7712948022652454,False,False
+kill_raw_30,0.4220130697417296,False,False
+kill_raw_40,0.1625108055955602,False,False
+kill_raw_50,0.19193297743391752,False,False
+kill_raw_100,0.4135384154035456,False,False
+rescue_intercept_a0,0.7163363612659422,False,False
+rescue_dose_slope_a1,0.09415661303599736,False,False
+log10_sigma_tau,0.6741117501243502,False,False

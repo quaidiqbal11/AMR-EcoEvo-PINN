@@ -1,0 +1,10 @@
+outer_fold,endpoint,model,selected_hyperparameter,hyperparameter_name
+0,rescue_86h,M0_dose_only,,Jeffreys dose prevalence
+0,rescue_86h,M1_observed_trajectory,0.1,C
+0,rescue_86h,M2_physics_informed,0.01,C
+1,rescue_86h,M0_dose_only,,Jeffreys dose prevalence
+1,rescue_86h,M1_observed_trajectory,0.01,C
+1,rescue_86h,M2_physics_informed,0.01,C
+2,rescue_86h,M0_dose_only,,Jeffreys dose prevalence
+2,rescue_86h,M1_observed_trajectory,0.01,C
+2,rescue_86h,M2_physics_informed,0.01,C

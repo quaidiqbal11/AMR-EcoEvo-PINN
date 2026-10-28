@@ -1,0 +1,11 @@
+{
+  "label": "round3_ablation_ode_fit",
+  "model_kind": "ode_fit",
+  "mutation_probability": 9.999999739620248e-05,
+  "resistance_fitness_cost": 0.09999999703657443,
+  "objective": 1.066572364833963e-17,
+  "nfev": 11,
+  "training_seconds": 12.713208436965942,
+  "relative_error_mu": 2.6037975215612713e-08,
+  "relative_error_cost": 2.9634255743760107e-08
+}

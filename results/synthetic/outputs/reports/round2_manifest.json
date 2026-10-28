@@ -1,0 +1,81 @@
+{
+  "seed": 20260804,
+  "quick_mode": false,
+  "short_replicates": 500,
+  "outcome_replicates": 1000,
+  "rescue_grid_replicates": 300,
+  "parameters": {
+    "carrying_capacity": 1000,
+    "sensitive_birth_rate": 1.0,
+    "resistance_fitness_cost": 0.1,
+    "sensitive_death_rate": 0.1,
+    "resistant_death_rate": 0.1,
+    "mutation_probability": 0.0001,
+    "sensitive_drug_effect": 1.0,
+    "resistant_drug_effect": 0.1
+  },
+  "resistant_birth_rate": 0.9,
+  "config": {
+    "initial_sensitive": 100,
+    "initial_resistant": 0,
+    "short_final_time": 20.0,
+    "short_output_points": 401,
+    "outcome_final_time": 120.0,
+    "outcome_output_points": 601,
+    "establishment_threshold": 10,
+    "dominance_fraction": 0.5,
+    "maximum_events_per_replicate": 2000000
+  },
+  "schedules": {
+    "untreated": {
+      "switch_times": [],
+      "levels": [
+        0.0
+      ],
+      "description": "No treatment."
+    },
+    "early_continuous": {
+      "switch_times": [
+        5.0
+      ],
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "description": "Permanent treatment from t=5."
+    },
+    "late_continuous": {
+      "switch_times": [
+        10.0
+      ],
+      "levels": [
+        0.0,
+        1.0
+      ],
+      "description": "Permanent treatment from t=10."
+    },
+    "pulsed": {
+      "switch_times": [
+        5.0,
+        8.0,
+        12.0,
+        15.0
+      ],
+      "levels": [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "description": "Treatment on [5,8) and [12,15)."
+    }
+  },
+  "outcome_definitions": {
+    "emergence": "first R>=1",
+    "establishment": "first R>=10",
+    "dominance": "first R/(S+R)>=0.5",
+    "extinction": "S=R=0",
+    "evolutionary_rescue": "permanent treatment, final S=0, final R>0, establishment reached"
+  }
+}

@@ -1,0 +1,6 @@
+design,schedule_count,schedules,regime,phenotype_points_per_schedule,description
+M1,1,early_continuous,O3,3,Single early-continuous treatment environment with three resistant-fraction observations.
+M2,2,"early_continuous, late_continuous",O3,3,Early- and late-continuous treatment environments with shared inverse parameters.
+M3,3,"early_continuous, late_continuous, pulsed",O3,3,Three treated environments with shared inverse parameters.
+M4,4,"untreated, early_continuous, late_continuous, pulsed",O3,3,Untreated plus three treatment environments with sparse phenotype observations.
+M5,4,"untreated, early_continuous, late_continuous, pulsed",O4,21,Four-environment phenotype-rich upper-information benchmark.

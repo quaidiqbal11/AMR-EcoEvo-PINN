@@ -1,0 +1,7 @@
+comparison,metric,observed_difference,ci95_low,ci95_high,interpretation
+M1_observed_trajectory minus M0_dose_only,Brier difference,-0.0016222529107517147,-0.018502512142293814,0.015014528982074313,negative favors second model
+M2_physics_informed minus M1_observed_trajectory,Brier difference,0.0030170275462023943,-0.006048745684656435,0.011474719312499574,negative favors second model
+M2_physics_informed minus M0_dose_only,Brier difference,0.0013947746354506796,-0.014011692670820811,0.015266164738116459,negative favors second model
+Q1_observed_trajectory minus Q0_dose_only,RMSE difference,0.018665940005783754,-0.011675255442846392,0.0457857651604865,negative favors second model
+Q2_physics_informed minus Q1_observed_trajectory,RMSE difference,0.0003567460887572427,-0.030611480815771915,0.022579542174642316,negative favors second model
+Q2_physics_informed minus Q0_dose_only,RMSE difference,0.019022686094540997,-0.026873842352962404,0.059858166940501764,negative favors second model

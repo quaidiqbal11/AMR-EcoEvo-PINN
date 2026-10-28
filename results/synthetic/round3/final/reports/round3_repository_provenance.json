@@ -1,0 +1,73 @@
+{
+  "repositories": {
+    "DrugRes_StructPop": {
+      "used": [
+        "sensitive/resistant stochastic reaction structure",
+        "logistic birth, death, mutation during sensitive division",
+        "treatment-switch handling and evolutionary-rescue terminology"
+      ],
+      "not_claimed_as_novel": "The AMR population model and Gillespie method.",
+      "round3_role": "Provides the deterministic mean-field equations and later stochastic transfer test."
+    },
+    "BINNs": {
+      "used": [
+        "sparse biological inverse-learning philosophy",
+        "explicit non-negative output mappings as a baseline",
+        "separation of data-fit and mechanistic residual losses",
+        "careful output scaling and validation tracking"
+      ],
+      "not_claimed_as_novel": "Learning biological dynamics from sparse data.",
+      "round3_role": "Motivates sparse total-load and phenotype-fraction inference."
+    },
+    "PINN-Proj": {
+      "used": [
+        "ordinary versus soft versus exact-constraint comparisons",
+        "separate reporting of prediction and constraint errors",
+        "L-BFGS refinement after first-order optimization"
+      ],
+      "not_claimed_as_novel": "Differentiable projection for conservation constraints.",
+      "round3_role": "Motivates the controlled constraint ablation suite."
+    },
+    "Control-PINNs": {
+      "used": [
+        "treatment represented explicitly as an external system input",
+        "hierarchical state representations as a conceptual reference"
+      ],
+      "excluded": "No adjoint, stationarity equation, or treatment optimization is used in Paper 1.",
+      "round3_role": "Confirms that prescribed-schedule inference is distinct from optimal control."
+    },
+    "evo_dm": {
+      "used": [
+        "fitness-cost interpretation",
+        "evaluation across multiple treatment environments"
+      ],
+      "excluded": "No reinforcement-learning or drug-selection policy is trained in Round 3.",
+      "round3_role": "Motivates schedule diversity without broadening Paper 1 into control."
+    },
+    "KKT_hPINN": {
+      "used": [
+        "hard versus soft feasibility comparison",
+        "training through an exact differentiable constraint mapping",
+        "constraint audits independent of predictive accuracy"
+      ],
+      "not_claimed_as_novel": "Hard linear equality constraints using KKT projection.",
+      "round3_role": "Motivates exact feasibility but cannot directly encode the AMR feasible set."
+    }
+  },
+  "novelty_boundary": {
+    "proposed_contribution": [
+      "latent separation of sensitive and resistant populations from total load plus sparse phenotype fractions",
+      "coupled total-abundance sigmoid and phenotype softmax representation",
+      "exact non-negativity, phenotype simplex, carrying capacity, initial state, and treatment-interface continuity",
+      "identifiability-aware inference of mutation probability and resistance fitness cost",
+      "transfer of deterministic inverse estimates to independent Gillespie outcome validation"
+    ],
+    "not_claimed": [
+      "first PINN",
+      "first AMR model",
+      "first hard-constrained neural network",
+      "first Gillespie AMR simulator",
+      "first antibiotic-control or reinforcement-learning framework"
+    ]
+  }
+}

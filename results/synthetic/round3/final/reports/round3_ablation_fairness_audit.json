@@ -1,0 +1,13 @@
+{
+  "ode_fit_scope": "training observations only",
+  "validation_points_used_during_ode_fit": false,
+  "dense_hidden_states_used_during_ode_fit": false,
+  "dense_hidden_states_used_for_postfit_evaluation": true,
+  "exact_true_initialization_used": false,
+  "shared_non_oracle_initialization": {
+    "mutation_probability": 0.0003,
+    "resistance_fitness_cost": 0.15
+  },
+  "ode_physics_residual_rmse": "N/A",
+  "common_validation_metric": "heldout total log-MSE + heldout resistant-fraction MSE"
+}

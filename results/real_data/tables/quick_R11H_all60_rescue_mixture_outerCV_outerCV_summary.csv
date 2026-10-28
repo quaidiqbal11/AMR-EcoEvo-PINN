@@ -1,0 +1,2 @@
+n_populations_total,n_outer_folds,oof_rmse_logB,oof_mae_logB,oof_logB_coverage_within_2sd,oof_rescue_brier,oof_rescue_log_loss,oof_rescue_accuracy_at_0p5,oof_rmse_qR,oof_mae_qR,oof_qR_coverage_within_2sd
+60,3,1.1414876327177461,0.6736917397333213,0.44841269841269843,0.2484964152520576,0.6902197347252196,0.5416666666666666,0.40769540702492435,0.38837398947993707,1.0

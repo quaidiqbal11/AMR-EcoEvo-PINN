@@ -1,0 +1,4 @@
+diagnostic,value,unit
+Maximum combined raw physics RMSE,0.0027716937279517965,h^-1
+Maximum scaled physics RMSE,0.06652064947084312,dimensionless
+Maximum early-time log-R physics RMSE,0.034946405257741196,dimensionless

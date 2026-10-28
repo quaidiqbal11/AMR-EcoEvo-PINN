@@ -1,0 +1,2 @@
+mutation_probability,resistance_fitness_cost,sensitive_birth_rate_per_h,baseline_death_rate_per_h,initial_resistant_fraction_shared,resistant_growth_onset_h,resistant_growth_activation_per_h
+1.8757194669769564e-12,0.499974711087661,0.009227594481917767,0.00010000000000304118,5.1111270022805635e-05,47.9999999365812,4.924766400685409

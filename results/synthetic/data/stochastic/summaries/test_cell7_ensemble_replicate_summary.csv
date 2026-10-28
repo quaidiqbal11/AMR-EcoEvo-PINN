@@ -1,0 +1,4 @@
+replicate,seed,schedule,event_count,emergence_time,establishment_time,dominance_time,sensitive_extinction_time,total_extinction_time,sensitive_at_treatment,resistant_at_treatment,final_sensitive,final_resistant,mutant_present_at_treatment,established,resistant_dominance_reached,survived,extinct,evolutionary_rescue
+0,2063823993,early_continuous,1821,,,,,,830,0,175,0,False,False,False,True,False,False
+1,707806953,early_continuous,2500,4.83237572727368,9.809526757897935,17.89631248639024,,,807,1,182,414,True,True,True,True,False,False
+2,3670063400,early_continuous,1836,,,,,,824,0,174,0,False,False,False,True,False,False

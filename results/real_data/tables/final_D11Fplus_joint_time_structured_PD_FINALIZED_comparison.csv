@@ -1,0 +1,5 @@
+model,weighted_data_objective,relative_to_PINN
+Current trained PINN,1.3703036964339934,1.0
+Flexible Hill-kill exact ODE,2.574002697955372,1.8784176855494308
+Free dose-specific-kill + rhoR exact ODE,2.2663320733396235,1.6538903596607142
+Joint time-structured exact ODE,1.331552685081236,0.9717208590667886

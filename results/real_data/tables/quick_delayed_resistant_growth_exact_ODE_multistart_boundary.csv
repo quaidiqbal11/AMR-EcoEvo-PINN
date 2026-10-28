@@ -1,0 +1,8 @@
+parameter,normalized_bound_position,near_lower_bound,near_upper_bound
+log10_mu,0.027316788571991067,False,False
+cR,0.999949422175322,False,True
+log10_rS,0.29235980949174506,False,False
+log10_d0,3.301914297537678e-12,True,False
+log10_q0,0.7708516672523299,False,False
+tau_R,0.999999998678775,False,True
+log10_gamma,0.9975604141037132,False,True

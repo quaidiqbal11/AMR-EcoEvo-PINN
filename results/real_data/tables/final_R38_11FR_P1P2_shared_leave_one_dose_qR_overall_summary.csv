@@ -1,0 +1,2 @@
+n_doses,n_total_folds,mean_abs_error_across_doses,median_abs_error_across_doses,mean_rmse_to_individual_observations,mean_shift_from_full_fit_qR,max_inverse_change_during_P1P2
+4,12,0.08776916725317854,0.06692455192466981,0.21790586986846394,0.03668388775528642,0.0

@@ -1,0 +1,201 @@
+design,n_doses,doses,seed,parameter,parameter_label,estimate
+R1,1,30,1,mutation_probability,Mutation probability $\mu$,3.512290341724611e-06
+R1,1,30,1,resistance_fitness_cost,Resistance fitness cost $c_R$,0.12650923110285786
+R1,1,30,1,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.604496868929889
+R1,1,30,1,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.32646827434142184
+R1,1,30,1,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.2542675073589373e-06
+R1,1,30,1,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.4922721029031904
+R1,1,30,1,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),16.807655426500226
+R1,1,30,1,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2406296437781498
+R1,1,30,2,mutation_probability,Mutation probability $\mu$,2.1276385646679133e-06
+R1,1,30,2,resistance_fitness_cost,Resistance fitness cost $c_R$,0.1368697427775842
+R1,1,30,2,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6037511746208261
+R1,1,30,2,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.32432694438880055
+R1,1,30,2,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.7363010508526694e-06
+R1,1,30,2,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.458375562137187
+R1,1,30,2,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),16.909842408651283
+R1,1,30,2,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.22794862158598214
+R1,1,30,3,mutation_probability,Mutation probability $\mu$,2.9839258857576054e-06
+R1,1,30,3,resistance_fitness_cost,Resistance fitness cost $c_R$,0.1257223871850896
+R1,1,30,3,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6230138519332361
+R1,1,30,3,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3295838580499661
+R1,1,30,3,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,2.4350106289033903e-06
+R1,1,30,3,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.5049580209432409
+R1,1,30,3,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),16.785986927790002
+R1,1,30,3,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.21931098608716984
+R1,1,30,4,mutation_probability,Mutation probability $\mu$,2.7425454823538603e-06
+R1,1,30,4,resistance_fitness_cost,Resistance fitness cost $c_R$,0.13422553031967205
+R1,1,30,4,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6223954409191775
+R1,1,30,4,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.32996250663719334
+R1,1,30,4,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.8375085765044275e-06
+R1,1,30,4,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.4917035077895438
+R1,1,30,4,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),16.75020500517798
+R1,1,30,4,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.22440765533550736
+R1,1,30,5,mutation_probability,Mutation probability $\mu$,3.4649171032621367e-06
+R1,1,30,5,resistance_fitness_cost,Resistance fitness cost $c_R$,0.15067929004475147
+R1,1,30,5,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6202089036040574
+R1,1,30,5,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.33115076251022063
+R1,1,30,5,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.36578193571128e-06
+R1,1,30,5,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.4724552930307657
+R1,1,30,5,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),16.75163355666305
+R1,1,30,5,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.23183995478008054
+R2,2,30+40,1,mutation_probability,Mutation probability $\mu$,1.1003880136923277e-08
+R2,2,30+40,1,resistance_fitness_cost,Resistance fitness cost $c_R$,0.06166704571965741
+R2,2,30+40,1,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),1.350219814534625
+R2,2,30+40,1,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.5452828723223608
+R2,2,30+40,1,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.6473384890016566e-07
+R2,2,30+40,1,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.8671429926320947
+R2,2,30+40,1,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),13.449642869096781
+R2,2,30+40,1,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.16406988035918957
+R2,2,30+40,2,mutation_probability,Mutation probability $\mu$,8.348489676707173e-07
+R2,2,30+40,2,resistance_fitness_cost,Resistance fitness cost $c_R$,0.14925978568848813
+R2,2,30+40,2,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6194585415448091
+R2,2,30+40,2,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.310497130677067
+R2,2,30+40,2,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.1869124160670896e-06
+R2,2,30+40,2,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.4028299897440349
+R2,2,30+40,2,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.887891987621853
+R2,2,30+40,2,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.22630930262362292
+R2,2,30+40,3,mutation_probability,Mutation probability $\mu$,4.2510468769538206e-08
+R2,2,30+40,3,resistance_fitness_cost,Resistance fitness cost $c_R$,0.10282290658316144
+R2,2,30+40,3,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.7459909762196254
+R2,2,30+40,3,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.35311032434351003
+R2,2,30+40,3,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,4.6560130076654353e-07
+R2,2,30+40,3,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.47639976379134824
+R2,2,30+40,3,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.200352166280616
+R2,2,30+40,3,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.20913214011354944
+R2,2,30+40,4,mutation_probability,Mutation probability $\mu$,3.8209534877239137e-07
+R2,2,30+40,4,resistance_fitness_cost,Resistance fitness cost $c_R$,0.18014706650855516
+R2,2,30+40,4,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.662960193549784
+R2,2,30+40,4,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3204071143433553
+R2,2,30+40,4,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.4566568431676335e-06
+R2,2,30+40,4,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.3872860081856385
+R2,2,30+40,4,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.726844683139245
+R2,2,30+40,4,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.20048639776784466
+R2,2,30+40,5,mutation_probability,Mutation probability $\mu$,1.0956240197085474e-09
+R2,2,30+40,5,resistance_fitness_cost,Resistance fitness cost $c_R$,0.024464881506637025
+R2,2,30+40,5,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),1.3302092965892987
+R2,2,30+40,5,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.5323098231809731
+R2,2,30+40,5,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.616501159517788e-08
+R2,2,30+40,5,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.879303504864259
+R2,2,30+40,5,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),13.385500028332583
+R2,2,30+40,5,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.15962550725709598
+R3,3,30+40+50,1,mutation_probability,Mutation probability $\mu$,2.0296813827205573e-07
+R3,3,30+40+50,1,resistance_fitness_cost,Resistance fitness cost $c_R$,0.11380776844925618
+R3,3,30+40+50,1,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6964875159656189
+R3,3,30+40+50,1,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.35100205541740825
+R3,3,30+40+50,1,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,4.415140145201421e-07
+R3,3,30+40+50,1,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.4508107943270696
+R3,3,30+40+50,1,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.474592420884722
+R3,3,30+40+50,1,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.18991762735228965
+R3,3,30+40+50,2,mutation_probability,Mutation probability $\mu$,2.1483643227663899e-07
+R3,3,30+40+50,2,resistance_fitness_cost,Resistance fitness cost $c_R$,0.07547081258954594
+R3,3,30+40+50,2,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6491223413657605
+R3,3,30+40+50,2,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3613043882617299
+R3,3,30+40+50,2,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.193395165319911e-07
+R3,3,30+40+50,2,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.40070863921185035
+R3,3,30+40+50,2,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.665849553378433
+R3,3,30+40+50,2,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2320420907022092
+R3,3,30+40+50,3,mutation_probability,Mutation probability $\mu$,2.1105864935069545e-08
+R3,3,30+40+50,3,resistance_fitness_cost,Resistance fitness cost $c_R$,0.045204973996459605
+R3,3,30+40+50,3,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),1.0912343956465027
+R3,3,30+40+50,3,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.5247383470128048
+R3,3,30+40+50,3,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,7.31970883170672e-07
+R3,3,30+40+50,3,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.8095829706364982
+R3,3,30+40+50,3,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.074792029730641
+R3,3,30+40+50,3,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.22082388324731822
+R3,3,30+40+50,4,mutation_probability,Mutation probability $\mu$,5.939929958016682e-07
+R3,3,30+40+50,4,resistance_fitness_cost,Resistance fitness cost $c_R$,0.13042511143025326
+R3,3,30+40+50,4,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6916930329100165
+R3,3,30+40+50,4,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.36346662072785285
+R3,3,30+40+50,4,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.696358012099835e-06
+R3,3,30+40+50,4,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.44854402734931187
+R3,3,30+40+50,4,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),15.392148025280918
+R3,3,30+40+50,4,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.20945050971849744
+R3,3,30+40+50,5,mutation_probability,Mutation probability $\mu$,1.1130505204210911e-07
+R3,3,30+40+50,5,resistance_fitness_cost,Resistance fitness cost $c_R$,0.07173168587276703
+R3,3,30+40+50,5,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),1.1138559063506657
+R3,3,30+40+50,5,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.5276164806809974
+R3,3,30+40+50,5,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.7636615200866709e-06
+R3,3,30+40+50,5,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.8141504031667317
+R3,3,30+40+50,5,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.983037100665996
+R3,3,30+40+50,5,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.20754049306354708
+R4,4,30+40+50+100,1,mutation_probability,Mutation probability $\mu$,5.3025991592752374e-08
+R4,4,30+40+50+100,1,resistance_fitness_cost,Resistance fitness cost $c_R$,0.009357779222353807
+R4,4,30+40+50+100,1,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.7983652931749909
+R4,4,30+40+50+100,1,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3872157934966105
+R4,4,30+40+50+100,1,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,6.157790372642242e-06
+R4,4,30+40+50+100,1,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7757783555788208
+R4,4,30+40+50+100,1,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.47473043378594
+R4,4,30+40+50+100,1,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.23268860415055315
+R4,4,30+40+50+100,2,mutation_probability,Mutation probability $\mu$,1.9814855270801928e-07
+R4,4,30+40+50+100,2,resistance_fitness_cost,Resistance fitness cost $c_R$,0.009511739661724673
+R4,4,30+40+50+100,2,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.7722529217006605
+R4,4,30+40+50+100,2,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.39836045244437696
+R4,4,30+40+50+100,2,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,8.30400987891802e-06
+R4,4,30+40+50+100,2,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7650894838117008
+R4,4,30+40+50+100,2,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.844571161808808
+R4,4,30+40+50+100,2,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2732587132298205
+R4,4,30+40+50+100,3,mutation_probability,Mutation probability $\mu$,8.411408813595666e-08
+R4,4,30+40+50+100,3,resistance_fitness_cost,Resistance fitness cost $c_R$,0.015481005668087168
+R4,4,30+40+50+100,3,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.7692247012928527
+R4,4,30+40+50+100,3,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3818361151473886
+R4,4,30+40+50+100,3,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,1.0223639727586231e-05
+R4,4,30+40+50+100,3,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7775277602196834
+R4,4,30+40+50+100,3,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.312959254725914
+R4,4,30+40+50+100,3,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.21899452541356493
+R4,4,30+40+50+100,4,mutation_probability,Mutation probability $\mu$,2.4713820646240294e-07
+R4,4,30+40+50+100,4,resistance_fitness_cost,Resistance fitness cost $c_R$,0.01839907704149813
+R4,4,30+40+50+100,4,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.805144641657557
+R4,4,30+40+50+100,4,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.39240610769012496
+R4,4,30+40+50+100,4,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,6.286330815434043e-06
+R4,4,30+40+50+100,4,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7683308461806899
+R4,4,30+40+50+100,4,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.535035731912537
+R4,4,30+40+50+100,4,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2453165208854021
+R4,4,30+40+50+100,5,mutation_probability,Mutation probability $\mu$,1.7577199586228529e-07
+R4,4,30+40+50+100,5,resistance_fitness_cost,Resistance fitness cost $c_R$,0.008990969102409813
+R4,4,30+40+50+100,5,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.7832855923926569
+R4,4,30+40+50+100,5,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3898115067496955
+R4,4,30+40+50+100,5,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,7.712134917849908e-06
+R4,4,30+40+50+100,5,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7787047612673533
+R4,4,30+40+50+100,5,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.603050032263155
+R4,4,30+40+50+100,5,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.23918028144709033
+R5,5,0+30+40+50+100,1,mutation_probability,Mutation probability $\mu$,1.2774618114024422e-05
+R5,5,0+30+40+50+100,1,resistance_fitness_cost,Resistance fitness cost $c_R$,0.17047385277650356
+R5,5,0+30+40+50+100,1,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6899097621278467
+R5,5,0+30+40+50+100,1,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.34806743941528123
+R5,5,0+30+40+50+100,1,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,7.57890432970864e-05
+R5,5,0+30+40+50+100,1,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.6013997981783183
+R5,5,0+30+40+50+100,1,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),12.658670829792651
+R5,5,0+30+40+50+100,1,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2084908719138645
+R5,5,0+30+40+50+100,2,mutation_probability,Mutation probability $\mu$,1.1497344273520037e-05
+R5,5,0+30+40+50+100,2,resistance_fitness_cost,Resistance fitness cost $c_R$,0.06312563260882655
+R5,5,0+30+40+50+100,2,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6321190474563965
+R5,5,0+30+40+50+100,2,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3216105541533194
+R5,5,0+30+40+50+100,2,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,3.819468820444719e-05
+R5,5,0+30+40+50+100,2,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.7139211679755796
+R5,5,0+30+40+50+100,2,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),12.854578249286902
+R5,5,0+30+40+50+100,2,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.19107083819934198
+R5,5,0+30+40+50+100,3,mutation_probability,Mutation probability $\mu$,3.488858965667593e-06
+R5,5,0+30+40+50+100,3,resistance_fitness_cost,Resistance fitness cost $c_R$,0.15099235804886915
+R5,5,0+30+40+50+100,3,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.8265523415178493
+R5,5,0+30+40+50+100,3,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.39504523343864034
+R5,5,0+30+40+50+100,3,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,2.9964576837575098e-05
+R5,5,0+30+40+50+100,3,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.6768902482234462
+R5,5,0+30+40+50+100,3,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),13.320145056796164
+R5,5,0+30+40+50+100,3,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.20149516148918467
+R5,5,0+30+40+50+100,4,mutation_probability,Mutation probability $\mu$,2.0918754443245875e-05
+R5,5,0+30+40+50+100,4,resistance_fitness_cost,Resistance fitness cost $c_R$,0.12143159308440894
+R5,5,0+30+40+50+100,4,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.6911949477322855
+R5,5,0+30+40+50+100,4,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3556434373845677
+R5,5,0+30+40+50+100,4,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,5.719724798452653e-05
+R5,5,0+30+40+50+100,4,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.6760976436132152
+R5,5,0+30+40+50+100,4,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),12.921272937037912
+R5,5,0+30+40+50+100,4,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.2195556594488975
+R5,5,0+30+40+50+100,5,mutation_probability,Mutation probability $\mu$,1.2069377212540497e-06
+R5,5,0+30+40+50+100,5,resistance_fitness_cost,Resistance fitness cost $c_R$,0.0593074243240401
+R5,5,0+30+40+50+100,5,sensitive_birth_rate_per_h,Sensitive birth rate $r_S$ (h$^{-1}$),0.64578852195568
+R5,5,0+30+40+50+100,5,baseline_death_rate_per_h,Baseline death rate $d_0$ (h$^{-1}$),0.3377763436304941
+R5,5,0+30+40+50+100,5,initial_resistant_fraction_shared,Shared initial resistant fraction $q_0$,2.2951592149304502e-05
+R5,5,0+30+40+50+100,5,resistant_relative_drug_sensitivity,Relative resistant drug sensitivity $\rho_R$,0.6583744272159403
+R5,5,0+30+40+50+100,5,kill_activation_onset_h,Kill activation midpoint $\tau_K$ (h),14.705233874782643
+R5,5,0+30+40+50+100,5,kill_activation_per_h,Kill activation slope $\gamma_K$ (h$^{-1}$),0.18658310992859609

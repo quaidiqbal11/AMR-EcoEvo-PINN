@@ -1,0 +1,2 @@
+design,n_doses,doses,seed,best_validation_score,validation_rmse_logB,validation_rmse_qR,max_capacity_violation,mutation_probability,resistance_fitness_cost,sensitive_birth_rate_per_h,death_rate_per_h,initial_resistant_fraction_shared,q0_dose_30
+R1,1,30,1,2.3452200800080645,0.2762837952991306,0.5561813994806973,0.0,5.26114541590509e-07,0.07276454914924696,0.4916407176705766,0.414044412518487,1.8403039490118608e-07,1.8403039490118608e-07

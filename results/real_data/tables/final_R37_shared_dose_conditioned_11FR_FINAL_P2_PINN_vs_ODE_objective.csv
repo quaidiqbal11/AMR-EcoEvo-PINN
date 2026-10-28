@@ -1,0 +1,2 @@
+PINN_observed_window_weighted_data_objective,same_parameter_exact_ODE_observed_window_weighted_data_objective,exact_ODE_to_PINN_objective_ratio,scope
+1.3659911606585047,1.5414042696206862,1.1284145271318007,control through its observed horizon; treated doses through 48 h; no treated 86-h endpoint
