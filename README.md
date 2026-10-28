@@ -48,11 +48,11 @@ Previews of the article figures, redrawn by `figures/make_all_figures.py` from t
 
 [![Fig 8](figures/preview/Fig8.png)](figures/preview/Fig8.png)
 
-**Fig 9.** Independent validation at the unpaired treated 86-h endpoint.
+**Fig 9.** Schedule-specific information from leave-one-schedule-out refits.
 
 [![Fig 9](figures/preview/Fig9.png)](figures/preview/Fig9.png)
 
-**Fig 10.** Schedule-specific information from leave-one-schedule-out refits.
+**Fig 10.** Independent validation at the unpaired treated 86-h endpoint.
 
 [![Fig 10](figures/preview/Fig10.png)](figures/preview/Fig10.png)
 
@@ -69,7 +69,7 @@ AMR-EcoEvo-PINN/
 │                                       independent 86-h endpoint validation
 ├── figures/                            stand-alone scripts that redraw Fig 1-10 at PLOS size
 │   ├── plos_style.py                   shared sizes, fonts (Arial, 8-11 pt) and output paths
-│   ├── Fig1_framework_overview.py ... Fig10_leave_one_schedule_out.py
+│   ├── Fig1_framework_overview.py ... Fig10_independent_86h_validation.py
 │   ├── make_all_figures.py
 │   ├── preview/                        PNG previews of Fig 1-10 (shown above)
 │   └── output/                         FigN.pdf (for LaTeX) and FigN.tif (for PLOS)
@@ -152,8 +152,8 @@ Each figure is written to `figures/output/` as a vector PDF and as a 600-dpi RGB
 | Fig 6 | 01 · Round 3 Cells 18-19 | `Fig6_observation_regimes.py` | `round3/final/tables/round3_observation_regime_all_seeds_metrics.csv` |
 | Fig 7 | 01 · Round 4 Cell 24 | `Fig7_profile_surfaces.py` | `round4_profile_surfaces_M1_M4.csv` |
 | Fig 8 | 01 · Round 4 Cell 19 | `Fig8_parameter_recovery.py` | `round4_primary_multischedule_all_seeds_metrics.csv` |
-| Fig 9 | 02 · Cell 12 | `Fig9_independent_86h_validation.py` | `final_R310_*_population_forecasts_from_48h.csv` |
-| Fig 10 | 01 · Round 4 Cells 23-23C | `Fig10_leave_one_schedule_out.py` | `round4_leave_one_schedule_out_metrics.csv` |
+| Fig 9 | 01 · Round 4 Cells 23-23C | `Fig9_leave_one_schedule_out.py` | `round4_leave_one_schedule_out_metrics.csv` |
+| Fig 10 | 02 · Cell 12 | `Fig10_independent_86h_validation.py` | `final_R310_*_population_forecasts_from_48h.csv` |
 | Table 1 | 01 · Round 3 Cell 16 | n/a | `round3/final/tables` |
 | Table 2 | 01 · Round 4 Cells 18-19 | n/a | `round4/final/tables` |
 | Tables 3-5 | 02 · Cells 9, 10, 12 | n/a | `real_data/tables` |

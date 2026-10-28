@@ -1,5 +1,5 @@
 """
-Fig 10 -- Schedule-specific information from leave-one-schedule-out refits
+Fig 9 -- Schedule-specific information from leave-one-schedule-out refits
 (paired % change relative to the full M4 design).
 Source: Round 4, Cell 23C. No training; recomputes the paired changes from the
 saved leave-one-schedule-out metrics exactly as Cell 23C does
@@ -45,7 +45,7 @@ if CSV.exists():
     matrix = (paired.groupby("omitted")[[f"{m}_chg" for m in METRICS]].mean()
               .reindex(ROW_ORDER).to_numpy(float))
 else:
-    print(f"Fig10: {CSV.name} not found -- drawing the values reported in the manuscript.")
+    print(f"Fig9: {CSV.name} not found -- drawing the values reported in the manuscript.")
     matrix = PUBLISHED
 
 LIMIT = 200.0
@@ -67,4 +67,4 @@ cbar = fig.colorbar(image, ax=ax, pad=0.025, ticks=np.arange(-200, 201, 50))
 cbar.set_label("Change after schedule omission\nvs. full M4 (%)")
 cbar.ax.tick_params(labelsize=ps.FS_TICK)
 fig.subplots_adjust(left=0.22, right=0.96, top=0.97, bottom=0.10)
-ps.save_plos(fig, 10)
+ps.save_plos(fig, 9)

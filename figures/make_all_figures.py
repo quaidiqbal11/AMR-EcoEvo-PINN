@@ -24,8 +24,8 @@ SCRIPTS = [
     "Fig6_observation_regimes.py",
     "Fig7_profile_surfaces.py",
     "Fig8_parameter_recovery.py",
-    "Fig9_independent_86h_validation.py",
-    "Fig10_leave_one_schedule_out.py",
+    "Fig9_leave_one_schedule_out.py",
+    "Fig10_independent_86h_validation.py",
 ]
 
 failed = []

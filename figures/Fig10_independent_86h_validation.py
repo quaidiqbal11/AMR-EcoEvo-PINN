@@ -1,5 +1,5 @@
 """
-Fig 9 -- Independent validation at the unpaired treated 86-h endpoint.
+Fig 10 -- Independent validation at the unpaired treated 86-h endpoint.
 Source: real-data notebook, "cell 12 figures" (R3.10, Figure C). No training.
 
 Inputs
@@ -107,4 +107,4 @@ fig.legend(handles=[
     loc="upper center", bbox_to_anchor=(0.5, 1.0), ncol=3, frameon=False, handlelength=2.1,
     columnspacing=1.4, handletextpad=0.5)
 fig.subplots_adjust(left=0.085, right=0.985, bottom=0.15, top=0.85, wspace=0.30)
-ps.save_plos(fig, 9)
+ps.save_plos(fig, 10)

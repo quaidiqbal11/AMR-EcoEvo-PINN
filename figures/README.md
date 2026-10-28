@@ -19,5 +19,5 @@ Output goes to `figures/output/`. Input paths are set in `plos_style.py` (SECTIO
 | `Fig6_observation_regimes.py` | Effect of phenotype-observation richness |
 | `Fig7_profile_surfaces.py` | Observation-objective geometry in the (μ, c_R) plane |
 | `Fig8_parameter_recovery.py` | Recovery of shared evolutionary parameters |
-| `Fig9_independent_86h_validation.py` | Independent validation at the 86-h endpoint |
-| `Fig10_leave_one_schedule_out.py` | Leave-one-schedule-out refits |
+| `Fig9_leave_one_schedule_out.py` | Leave-one-schedule-out refits |
+| `Fig10_independent_86h_validation.py` | Independent validation at the 86-h endpoint |
