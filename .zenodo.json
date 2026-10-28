@@ -3,12 +3,29 @@
   "upload_type": "software",
   "description": "Code, notebooks and figure scripts reproducing all results of Iqbal and Shah, 'Simplex- and capacity-preserving eco-evolutionary physics-informed neural networks for sparse-data inference of antimicrobial resistance dynamics' (submitted to PLOS Computational Biology).",
   "creators": [
-    {"name": "Iqbal, Quaid", "affiliation": "Hamad Bin Khalifa University"},
-    {"name": "Shah, Zubair", "affiliation": "Hamad Bin Khalifa University"}
+    {
+      "name": "Iqbal, Quaid",
+      "affiliation": "Hamad Bin Khalifa University",
+      "orcid": "0009-0006-0503-6389"
+    },
+    {
+      "name": "Shah, Zubair",
+      "affiliation": "Hamad Bin Khalifa University"
+    }
   ],
   "license": "MIT",
-  "keywords": ["physics-informed neural networks", "antimicrobial resistance", "evolutionary rescue", "hard constraints", "identifiability"],
+  "keywords": [
+    "physics-informed neural networks",
+    "antimicrobial resistance",
+    "evolutionary rescue",
+    "hard constraints",
+    "identifiability"
+  ],
   "related_identifiers": [
-    {"identifier": "10.5061/dryad.c59q3", "relation": "references", "resource_type": "dataset"}
+    {
+      "identifier": "10.5061/dryad.c59q3",
+      "relation": "references",
+      "resource_type": "dataset"
+    }
   ]
 }

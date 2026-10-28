@@ -129,4 +129,4 @@ MIT; see [LICENSE](LICENSE).
 
 ## Contact
 
-Quaid Iqbal, College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar · quiq89904@hbku.edu.qa
+Quaid Iqbal, College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar · quiq89904@hbku.edu.qa · ORCID [0009-0006-0503-6389](https://orcid.org/0009-0006-0503-6389)

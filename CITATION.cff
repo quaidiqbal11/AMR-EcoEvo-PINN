@@ -9,6 +9,7 @@ repository-code: "https://github.com/quaidiqbal11/AMR-EcoEvo-PINN"
 authors:
   - family-names: Iqbal
     given-names: Quaid
+    orcid: "https://orcid.org/0009-0006-0503-6389"
     affiliation: "College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar"
     email: quiq89904@hbku.edu.qa
   - family-names: Shah
