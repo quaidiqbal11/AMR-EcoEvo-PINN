@@ -12,6 +12,50 @@ The repository reproduces every simulation, model fit, table and figure in the a
 
 Sensitive (*S*) and resistant (*R*) bacteria follow a logistic eco-evolutionary model with drug-dependent birth and death, mutation probability *μ* and resistance cost *c<sub>R</sub>*. Experiments measure total load *B = S + R* densely but resistant fraction *q<sub>R</sub> = R/B* only sparsely. The PINN predicts a normalised abundance *n = σ(z<sub>N</sub>)* and a composition *p = softmax(z<sub>p</sub>)*, and sets *S = K n p<sub>S</sub>* and *R = K n p<sub>R</sub>*. As a result *S, R ≥ 0*, *S + R ≤ K* and *p<sub>S</sub> + p<sub>R</sub> = 1* hold exactly at every time point, not only at collocation points. One network is trained per treatment environment, and all of them share the evolutionary parameters *ψ = (log<sub>10</sub> μ, c<sub>R</sub>)*.
 
+## Figures
+
+Previews of the article figures, redrawn by `figures/make_all_figures.py` from the saved results in `results/`. Click a figure to open it at full size.
+
+**Fig 1.** Proposed simplex- and capacity-preserving PINN framework.
+
+[![Fig 1](figures/preview/Fig1.png)](figures/preview/Fig1.png)
+
+**Fig 2.** Representative state reconstruction under the four-environment sparse-phenotype design.
+
+[![Fig 2](figures/preview/Fig2.png)](figures/preview/Fig2.png)
+
+**Fig 3.** Local identifiability geometry across nested designs M1–M5.
+
+[![Fig 3](figures/preview/Fig3.png)](figures/preview/Fig3.png)
+
+**Fig 4.** Experimental-data reconstruction with the inverse parameters fixed.
+
+[![Fig 4](figures/preview/Fig4.png)](figures/preview/Fig4.png)
+
+**Fig 5.** Experimental-data generalization and dose-design sensitivity.
+
+[![Fig 5](figures/preview/Fig5.png)](figures/preview/Fig5.png)
+
+**Fig 6.** Effect of phenotype-observation richness on hidden-state reconstruction.
+
+[![Fig 6](figures/preview/Fig6.png)](figures/preview/Fig6.png)
+
+**Fig 7.** Observation-objective geometry in the (μ, c<sub>R</sub>) plane for designs M1 and M4.
+
+[![Fig 7](figures/preview/Fig7.png)](figures/preview/Fig7.png)
+
+**Fig 8.** Recovery of shared evolutionary parameters across designs M1–M5.
+
+[![Fig 8](figures/preview/Fig8.png)](figures/preview/Fig8.png)
+
+**Fig 9.** Independent validation at the unpaired treated 86-h endpoint.
+
+[![Fig 9](figures/preview/Fig9.png)](figures/preview/Fig9.png)
+
+**Fig 10.** Schedule-specific information from leave-one-schedule-out refits.
+
+[![Fig 10](figures/preview/Fig10.png)](figures/preview/Fig10.png)
+
 ## Repository layout
 
 ```
@@ -27,6 +71,7 @@ AMR-EcoEvo-PINN/
 │   ├── plos_style.py                   shared sizes, fonts (Arial, 8-11 pt) and output paths
 │   ├── Fig1_framework_overview.py ... Fig10_leave_one_schedule_out.py
 │   ├── make_all_figures.py
+│   ├── preview/                        PNG previews of Fig 1-10 (shown above)
 │   └── output/                         FigN.pdf (for LaTeX) and FigN.tif (for PLOS)
 ├── data/real/                          analysis-ready Ramsayer et al. tables (see data/README.md)
 ├── results/
