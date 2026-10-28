@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article and this software archive."
+title: "AMR-EcoEvo-PINN: simplex- and capacity-preserving eco-evolutionary physics-informed neural networks for antimicrobial resistance"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/quaidiqbal11/AMR-EcoEvo-PINN"
+authors:
+  - family-names: Iqbal
+    given-names: Quaid
+    affiliation: "College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar"
+    email: quiq89904@hbku.edu.qa
+  - family-names: Shah
+    given-names: Zubair
+    affiliation: "College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar"
+keywords:
+  - physics-informed neural networks
+  - antimicrobial resistance
+  - evolutionary rescue
+  - hard constraints
+  - practical identifiability
+preferred-citation:
+  type: article
+  title: "Simplex- and capacity-preserving eco-evolutionary physics-informed neural networks for sparse-data inference of antimicrobial resistance dynamics"
+  authors:
+    - family-names: Iqbal
+      given-names: Quaid
+    - family-names: Shah
+      given-names: Zubair
+  journal: "PLOS Computational Biology"
+  year: 2026
+  notes: "Submitted"

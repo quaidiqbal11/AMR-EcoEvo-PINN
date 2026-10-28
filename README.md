@@ -1,148 +1,128 @@
-# Simplex- and Capacity-Preserving Eco-Evolutionary PINNs for Sparse-Data Inference of Antimicrobial Resistance Dynamics
-Code and executed notebook for **"Simplex- and Capacity-Preserving
-Eco-Evolutionary PINNs for Sparse-Data Inference of Antimicrobial Resistance
-Dynamics"** (Quaid Iqbal, 2026).
+# Simplex- and capacity-preserving eco-evolutionary PINNs for antimicrobial resistance
 
-The paper develops a hard-constrained, physics-informed neural network
-(PINN) that reconstructs latent sensitive/resistant bacterial phenotype
-trajectories from sparse, partially aggregated observations, while jointly
-inferring mutation probability ($\mu$) and resistance fitness cost ($c_R$).
-This repository contains the full pipeline used to produce every number,
-table, and figure in the manuscript: the deterministic eco-evolutionary
-model, a stochastic (Gillespie) reference simulator, the architecture
-ablation (data-only / vanilla / soft-constrained / positive-output /
-simplex-only / hard PINN), the O1–O4 observation-richness study, the
-nested M1–M5 multi-schedule identifiability study, and all identifiability
-diagnostics (sensitivity SVD, objective surfaces, leave-one-schedule-out,
-held-out-schedule transfer).
+Code accompanying the article
 
-## Repository structure
+> Iqbal Q, Shah Z. *Simplex- and capacity-preserving eco-evolutionary physics-informed neural networks for sparse-data inference of antimicrobial resistance dynamics.* Submitted to PLOS Computational Biology (2026).
+
+The repository reproduces every simulation, model fit, table and figure in the article and its S1 Appendix.
+
+## Method in one paragraph
+
+Sensitive (*S*) and resistant (*R*) bacteria follow a logistic eco-evolutionary model with drug-dependent birth and death, mutation probability *μ* and resistance cost *c<sub>R</sub>*. Experiments measure total load *B = S + R* densely but resistant fraction *q<sub>R</sub> = R/B* only sparsely. The PINN predicts a normalised abundance *n = σ(z<sub>N</sub>)* and a composition *p = softmax(z<sub>p</sub>)*, and sets *S = K n p<sub>S</sub>* and *R = K n p<sub>R</sub>*. As a result *S, R ≥ 0*, *S + R ≤ K* and *p<sub>S</sub> + p<sub>R</sub> = 1* hold exactly at every time point, not only at collocation points. One network is trained per treatment environment, and all of them share the evolutionary parameters *ψ = (log<sub>10</sub> μ, c<sub>R</sub>)*.
+
+## Repository layout
 
 ```
-.
+AMR-EcoEvo-PINN/
 ├── notebooks/
-│   └── AMR_PINN_Rounds1-4_FINAL.ipynb   # full executed notebook (Rounds 1-4), outputs stripped
-├── round1_deterministic_model.py                       # Round 1 — deterministic ODE model, forward analysis
-├── round2_stochastic_gillespie.py                      # Round 2 — Gillespie stochastic reference simulator
-├── round3_architecture_ablation_observation_regimes.py # Round 3 — architecture ablation + O1-O4
-├── round4_multischedule_identifiability.py             # Round 4 — M1-M5 + identifiability analysis
-├── figures/
-│   ├── round1/ ... round4/     # 63 figure previews extracted from the executed notebook
-├── outputs/                    # populated when you (re)run the scripts — see "Output layout" below
-├── requirements.txt
-├── CHANGELOG.md                 # documents the one whitespace-level fix applied when packaging
-├── LICENSE
-└── README.md
+│   ├── 01_synthetic_benchmarks.ipynb   Rounds 1-4: simulation, stochastic benchmark,
+│   │                                   architecture ablation, observation regimes,
+│   │                                   multi-environment designs and identifiability
+│   └── 02_real_data_Ramsayer.ipynb     Pseudomonas fluorescens streptomycin-rescue data:
+│                                       reconstruction, leave-one-dose, dose diversity,
+│                                       independent 86-h endpoint validation
+├── figures/                            stand-alone scripts that redraw Fig 1-10 at PLOS size
+│   ├── plos_style.py                   shared sizes, fonts (Arial, 8-11 pt) and output paths
+│   ├── Fig1_framework_overview.py ... Fig10_leave_one_schedule_out.py
+│   ├── make_all_figures.py
+│   └── output/                         FigN.pdf (for LaTeX) and FigN.tif (for PLOS)
+├── data/real/                          analysis-ready Ramsayer et al. tables (see data/README.md)
+├── results/
+│   ├── synthetic/                      written by notebook 01
+│   └── real_data/                      written by notebook 02
+├── tools/collect_results.py            copies existing local results into this layout
+├── requirements.txt, environment.yml
+├── CITATION.cff, .zenodo.json, LICENSE
 ```
 
-`notebooks/AMR_PINN_Rounds1-4_FINAL.ipynb` is the canonical, single source
-of truth: it is the exact working notebook used for the paper (Rounds 1–4
-in one file, separated by markdown section headers), with cell outputs
-stripped to keep the repository lightweight. The four `round*.py` files
-are a plain-script export of the same code (via `jupyter nbconvert`), split
-at the original round boundaries, provided so the code can be read, diffed,
-or imported without a notebook viewer. **Both forms contain identical
-logic** — see `CHANGELOG.md` for the one cosmetic fix applied during
-packaging (a single lost line break that broke whole-script parsing of one
-cell; no computation changed).
+## Installation
 
-## What each round does
-
-| Round | Script | Content | Maps to paper |
-|---|---|---|---|
-| 1 | `round1_deterministic_model.py` | Deterministic sensitive/resistant ODE model, high-accuracy solver, treatment schedules, sensitivity sweeps, publication figures for the forward model | §2.2–2.3 (model + schedules) |
-| 2 | `round2_stochastic_gillespie.py` | Exact Gillespie stochastic simulator, ensembles, extinction/rescue probabilities, demographic-noise figures | §2.17 (stochastic reference generation) |
-| 3 | `round3_architecture_ablation_observation_regimes.py` | Seven-way architecture ablation (data-only → hard PINN) under O3; five-seed O1–O4 observation-richness study | §2.12, §3.1–3.2 (Tables 2–3, Figs. 2–3) |
-| 4 | `round4_multischedule_identifiability.py` | Nested five-seed M1–M5 multi-schedule study; sensitivity SVD & objective-surface identifiability geometry; leave-one-schedule-out; held-out-schedule parameter transfer; final feasibility audit | §2.13–2.18, §3.3–3.7 (Tables 4, Figs. 4–7) |
-
-## Setup
+Python 3.11 or newer. The results in the article were produced with Python 3.13.11, PyTorch 2.7.1 (CUDA 11.8), NumPy 2.4.0, pandas 2.3.3, SciPy 1.16.3 and Matplotlib 3.10.8 on an NVIDIA GeForce RTX 3070 (8 GB).
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+git clone https://github.com/quaidiqbal11/AMR-EcoEvo-PINN.git
+cd AMR-EcoEvo-PINN
+
+# option 1: conda
+conda env create -f environment.yml
+conda activate amr-pinn
+
+# option 2: pip
+python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-A CUDA-capable GPU is **not required** — every script auto-selects
-`torch.device('cuda' if torch.cuda.is_available() else 'cpu')` — but the
-manuscript-scale Round 3/Round 4 runs (9000 Adam epochs × 25 primary fits)
-are slow on CPU. The paper's runs used PyTorch 2.7.1+cu118 on an NVIDIA
-RTX 3070 (see `requirements.txt` for the exact captured environment).
+For GPU training, install the PyTorch build that matches your CUDA version from <https://pytorch.org/get-started/locally/>. The code also runs on a CPU, but more slowly.
 
-## Reproducing the results
+## Reproducing the article
 
-Run the notebook top-to-bottom (`notebooks/AMR_PINN_Rounds1-4_FINAL.ipynb`),
-or run the four scripts in order from the repository root:
+Start Jupyter from the repository root (`jupyter lab`) and run the notebooks from top to bottom. Each notebook finds the repository root automatically, so no paths need editing.
+
+### 1. Synthetic benchmarks: `notebooks/01_synthetic_benchmarks.ipynb`
+
+| Part | Content | Output folder |
+|---|---|---|
+| Round 1 (Cells 1-24) | Deterministic model, four treatment schedules (untreated, early-continuous, late-continuous, pulsed), dense, sparse and noisy observations, sensitivity and convergence checks | `results/synthetic/data`, `results/synthetic/outputs` |
+| Round 2 (Cells 1-18) | Gillespie stochastic simulator, ensembles, rescue probabilities, stochastic sparse-data benchmark | `results/synthetic/data/stochastic`, `results/synthetic/outputs` |
+| Round 3 (Cells 1-19) | Hard-constraint PINN, architecture ablation, observation-richness regimes O1-O4 (five paired seeds) | `results/synthetic/round3/final` |
+| Round 4 (Cells 1-27) | Nested multi-environment designs M1-M5, parameter recovery, local identifiability, leave-one-schedule-out refits, objective surfaces, constraint audit | `results/synthetic/round4/final` |
+
+`QUICK_MODE = False` (Round 2, Cell 1) and `RUN_LABEL = "final"` reproduce the reported numbers. `QUICK_MODE = True` runs a short version for checking the code only, and its numbers should not be reported. Seeds are fixed in the first cell of each round.
+
+### 2. Experimental data: `notebooks/02_real_data_Ramsayer.ipynb`
+
+Copy the three data tables into `data/real/` (see [data/README.md](data/README.md)), then run the notebook.
+
+| Section | Experiment | Output |
+|---|---|---|
+| Cells 1-7 | Data audit, hard abundance-simplex architecture, physics and observation losses, four-stage training | `results/real_data/models` |
+| Cell 8 (Exp 3.7) + P1/P2 refinements | Reconstruction with inverse parameters frozen | `results/real_data/tables` |
+| Cell 9 (Exp 3.8) | Leave-one-dose phenotype generalization | `results/real_data/tables` |
+| Cell 10 (Exp 3.9) | Nested dose diversity | `results/real_data/tables` |
+| Cell 12 (Exp 3.10) | Independent, unpaired 86-h endpoint validation (the 86-h file is read only here) | `results/real_data/tables` |
+| Cell 13 | Provenance, consolidated audit, manifest | `results/real_data/reports` |
+
+### 3. Figures: `figures/`
+
+Once both notebooks have run:
 
 ```bash
-python round1_deterministic_model.py
-python round2_stochastic_gillespie.py
-python round3_architecture_ablation_observation_regimes.py
-python round4_multischedule_identifiability.py
+python figures/make_all_figures.py                 # all figures
+python figures/Fig6_observation_regimes.py         # or one figure
 ```
 
-Each script detects its working directory and writes outputs relative to
-the project root (it walks up one level automatically if launched from
-`notebooks/`), so both entry points are safe.
+Each figure is written to `figures/output/` as a vector PDF and as a 600-dpi RGB TIFF with LZW compression. The TIFFs are 7.5 in wide or less with Arial text of 8 pt or more, which meets the PLOS figure requirements. Fig 1 is 300 dpi and needs no data. The figure scripts only read saved CSV tables; they do not retrain anything.
 
-### Quick smoke test vs. manuscript-scale run
+## Where each result comes from
 
-Rounds 3 and 4 are controlled by a `QUICK_MODE` flag near the top of each
-script (`QUICK_MODE: bool = False` by default):
+| Article item | Notebook / cell | Figure script | Main input table |
+|---|---|---|---|
+| Fig 1 | n/a (schematic) | `Fig1_framework_overview.py` | none |
+| Fig 2 | 01 · Round 4 Cell 20 | `Fig2_representative_M4_trajectories.py` | `round4/final/tables/round4_primary_multischedule_all_seeds_metrics.csv`, `round4/final/predictions/` |
+| Fig 3 | 01 · Round 4 Cell 22 | `Fig3_identifiability_geometry.py` | `round4_identifiability_geometry_plot_values.csv` |
+| Fig 4 | 02 · Cell 8 + publication-figure cell | `Fig4_real_data_reconstruction.py` | `real_data/figures/publication_ready/source_data/final_MAIN_*.csv` |
+| Fig 5 | 02 · Cells 9-10 | `Fig5_generalization_design_sensitivity.py` | `final_R38_*`, `final_R39_*` tables |
+| Fig 6 | 01 · Round 3 Cells 18-19 | `Fig6_observation_regimes.py` | `round3/final/tables/round3_observation_regime_all_seeds_metrics.csv` |
+| Fig 7 | 01 · Round 4 Cell 24 | `Fig7_profile_surfaces.py` | `round4_profile_surfaces_M1_M4.csv` |
+| Fig 8 | 01 · Round 4 Cell 19 | `Fig8_parameter_recovery.py` | `round4_primary_multischedule_all_seeds_metrics.csv` |
+| Fig 9 | 02 · Cell 12 | `Fig9_independent_86h_validation.py` | `final_R310_*_population_forecasts_from_48h.csv` |
+| Fig 10 | 01 · Round 4 Cells 23-23C | `Fig10_leave_one_schedule_out.py` | `round4_leave_one_schedule_out_metrics.csv` |
+| Table 1 | 01 · Round 3 Cell 16 | n/a | `round3/final/tables` |
+| Table 2 | 01 · Round 4 Cells 18-19 | n/a | `round4/final/tables` |
+| Tables 3-5 | 02 · Cells 9, 10, 12 | n/a | `real_data/tables` |
 
-- `QUICK_MODE = True` — a fast structural smoke test (a handful of epochs,
-  e.g. 15 pretraining / 30 Adam epochs) to confirm the pipeline runs
-  end-to-end on your machine before committing to a full run. Outputs are
-  written under `round3/quick/` and `round4/quick/` and are explicitly
-  flagged as preliminary.
-- `QUICK_MODE = False` (default) — the manuscript-scale run reported in the
-  paper: 1500 pretraining epochs, 9000 joint-Adam epochs, L-BFGS refinement,
-  5 paired seeds per design (25 primary Round 4 fits). Outputs are written
-  under `round3/final/` and `round4/final/`, matching the numbers in
-  Tables 2–4 of the paper. Both scripts assert `RUN_LABEL == "final"`
-  before running the primary manuscript experiment, as a guard against
-  accidentally reporting a quick-mode run as final.
+## Data
 
-### Output layout
-
-Running the pipeline (re)creates, at the project root:
-
-```
-data/{dense,sparse,noisy}/                       # Round 1 deterministic reference trajectories + synthetic observations
-data/stochastic/{ensembles,summaries,pinn_exports}/  # Round 2 Gillespie ensembles and exports
-outputs/{figures,tables,reports}/                # Round 1 & Round 2 figures/tables
-round3/final/{figures,tables,reports,cache}/     # Round 3 architecture ablation + O1-O4
-round4/final/{models,predictions,histories,figures,tables,reports,cache}/  # Round 4 M1-M5 + identifiability
-```
-
-(`round3/quick/` and `round4/quick/` appear instead if `QUICK_MODE = True`.)
-Empty placeholders for this tree are already committed via `.gitkeep` files;
-the generated contents themselves are git-ignored (see `.gitignore`).
-
-This is exactly the layout the LaTeX source of the paper expects
-(`\graphicspath{{round3/final/figures/}{round4/final/figures/}}`), so
-figures generated by Round 3/4 can be dropped straight into the paper's
-`figures/` folder without renaming.
-
-`figures/round1` … `figures/round4` in *this* repository are a static,
-pre-generated copy of the 63 figures produced by the original executed
-run (extracted from the notebook's saved outputs), so results are
-browsable on GitHub without re-running anything.
+The experimental data are from Ramsayer J, Kaltz O, Hochberg ME, *Evolutionary rescue in populations of* Pseudomonas fluorescens *across an antibiotic gradient*, Evol Appl 2013;6(4):608-16, deposited at Dryad: <https://doi.org/10.5061/dryad.c59q3> (CC0). See [data/README.md](data/README.md) for the files and columns. All synthetic data are generated by notebook 01.
 
 ## Citation
 
-If you use this code, please cite the paper:
-
-```bibtex
-@article{iqbal2026simplex,
-  title   = {Simplex- and Capacity-Preserving Eco-Evolutionary {PINN}s for
-             Sparse-Data Inference of Antimicrobial Resistance Dynamics},
-  author  = {Iqbal, Quaid and Shah, Zubair},
-  year    = {2026},
-  note    = {Preprint / repository: see LICENSE for usage terms}
-}
-```
+If you use this code, please cite the article above and this software archive (see `CITATION.cff`; Zenodo DOI: 10.5281/zenodo.XXXXXXX).
 
 ## License
 
-MIT — see `LICENSE`.
+MIT; see [LICENSE](LICENSE).
+
+## Contact
+
+Quaid Iqbal, College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar · quiq89904@hbku.edu.qa

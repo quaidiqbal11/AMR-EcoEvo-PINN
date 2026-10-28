@@ -1,0 +1,15 @@
+name: amr-pinn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - numpy>=2.0
+  - pandas>=2.2
+  - scipy>=1.14
+  - scikit-learn>=1.5
+  - matplotlib>=3.9
+  - pillow>=10.0
+  - jupyterlab>=4.0
+  - pip
+  - pip:
+      - torch>=2.5   # for GPU use the CUDA build from https://pytorch.org/get-started/locally/
