@@ -1,5 +1,7 @@
 # Simplex- and capacity-preserving eco-evolutionary PINNs for antimicrobial resistance
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23727998.svg)](https://doi.org/10.5281/zenodo.23727998)
+
 Code accompanying the article
 
 > Iqbal Q, Shah Z. *Simplex- and capacity-preserving eco-evolutionary physics-informed neural networks for sparse-data inference of antimicrobial resistance dynamics.* Submitted to PLOS Computational Biology (2026).
@@ -117,7 +119,9 @@ The experimental data are from Ramsayer J, Kaltz O, Hochberg ME, *Evolutionary r
 
 ## Citation
 
-If you use this code, please cite the article above and this software archive (see `CITATION.cff`; Zenodo DOI: 10.5281/zenodo.XXXXXXX).
+If you use this code, please cite the article above and this software archive:
+
+> Iqbal Q, Shah Z. AMR-EcoEvo-PINN (v1.0.0). Zenodo; 2026. https://doi.org/10.5281/zenodo.23727998
 
 ## License
 
