@@ -1,6 +1,6 @@
 # Simplex- and capacity-preserving eco-evolutionary PINNs for antimicrobial resistance dynamics
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23727998.svg)](https://doi.org/10.5281/zenodo.23727998)
+[![DOI](https://zenodo.org/badge/1330978036.svg)](https://doi.org/10.5281/zenodo.23727997)
 
 Code accompanying the article
 
@@ -166,7 +166,9 @@ The experimental data are from Ramsayer J, Kaltz O, Hochberg ME, *Evolutionary r
 
 If you use this code, please cite the article above and this software archive:
 
-> Iqbal Q, Shah Z. AMR-EcoEvo-PINN (v1.0.0). Zenodo; 2026. https://doi.org/10.5281/zenodo.23727998
+> Iqbal Q, Shah Z. AMR-EcoEvo-PINN. Zenodo; 2026. https://doi.org/10.5281/zenodo.23727997
+
+This DOI always resolves to the latest archived version; version-specific DOIs are listed on the Zenodo record.
 
 ## License
 
