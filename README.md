@@ -16,7 +16,7 @@ Sensitive (*S*) and resistant (*R*) bacteria follow a logistic eco-evolutionary 
 
 Previews of the article figures, redrawn by `figures/make_all_figures.py` from the saved results in `results/`. Click a figure to open it at full size.
 
-**Fig 1.** Proposed simplex- and capacity-preserving PINN framework.
+**Fig 1.** Proposed simplex- and capacity-preserving PINN framework. The state network outputs abundance *n* and composition (*p<sub>S</sub>*, *p<sub>R</sub>*), which the simplex–capacity layer maps to feasible states *S* and *R*. The loss combines the observations with the ODE residual evaluated using the shared parameters ψ.
 
 [![Fig 1](figures/preview/Fig1.png)](figures/preview/Fig1.png)
 
